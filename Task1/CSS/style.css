@@ -11,7 +11,7 @@
   height: 2391px;
   z-index: 7;
 }
-.Tab_Menu {
+.tab-menu {
   font-size: 13px;
   font-family: "FjallaOne";
   color: rgb(231, 231, 231);
@@ -21,8 +21,15 @@
   position: absolute;
   left: 1145.938px;
   top: 32.7px;
-  z-index: 6;
+  z-index: 6;         
+  display: inline;
+  list-style: none;    
 }
+
+.tab-menu li {
+  display: inline;
+}
+
 .tab {
   background-color: rgb(232, 76, 61);
   position: absolute;
@@ -32,7 +39,7 @@
   height: 80px;
   z-index: 5;
 }
-.Site_Name {
+.site-name {
   font-size: 25px;
   font-family: "FjallaOne";
   color: rgb(231, 231, 231);
