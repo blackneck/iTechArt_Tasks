@@ -1,0 +1,58 @@
+#main
+{
+	background-color:#c4c0be;
+}
+
+.header {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1920px;
+  height: 2391px;
+  z-index: 7;
+}
+.Tab_Menu {
+  font-size: 13px;
+  font-family: "FjallaOne";
+  color: rgb(231, 231, 231);
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: left;
+  position: absolute;
+  left: 1145.938px;
+  top: 32.7px;
+  z-index: 6;
+}
+.tab {
+  background-color: rgb(232, 76, 61);
+  position: absolute;
+  left: 1125px;
+  top: 0px;
+  width: 75px;
+  height: 80px;
+  z-index: 5;
+}
+.Site_Name {
+  font-size: 25px;
+  font-family: "FjallaOne";
+  color: rgb(231, 231, 231);
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: left;
+  position: absolute;
+  left: 375.287px;
+  top: 25.5px;
+  z-index: 4;
+}
+.bg {
+  background-color: rgb(32, 38, 40);
+  box-shadow: 0px 1px 0px 0px rgba(232, 232, 232, 0.75);
+  position: absolute;
+  left: -2px;
+  top: 0px;
+  width: 1923px;
+  height: 80px;
+  z-index: 3;
+}
+
+
