@@ -1,78 +1,56 @@
 body {
-  margin: 0;
+	margin: 0;
 }
 
 .container {
   margin: 0 auto;
   background-color: rgb(255, 255, 255);    
-  height: 2391px;
-  width: 1920px;  
+  max-height: 2391px;
+  max-width: 1920px;  
   position: relative;      
-}
-
-.site-name {
-  font-size: 25px;
-  font-family: "FjallaOne";
-  color: rgb(231, 231, 231);
-  text-transform: uppercase;  
-  text-align: left;
-  position: absolute;
-  left: 375.287px;
-  top: 10px;   
 }
 
 header {
-  background-color: rgb(32, 38, 40);  
-  position: relative;      
-  height: 80px;  
+  background-color: rgb(32, 38, 40);    
+  display: table;
+  width: 100%;
 }
 
-.tab-menu {
-  font-size: 13px;
+.site-name-container {	
+	display: table-cell;
+	vertical-align: middle;	
+}
+
+.site-name-container h1 {
+  font-size: 25px;
   font-family: "FjallaOne";
-  color: rgb(231, 231, 231);  
-  text-transform: uppercase;        
-  position: absolute;
-  left: 1145.938px;      
-  height: 80px;
-  line-height: 80px;
-  list-style: none;
-  display: inline-block;    
+  color: rgb(231, 231, 231);
+  text-transform: uppercase;
+  margin-left: 70%;          
 }
 
-.tab-menu ul { 
-  margin: 0;
-  padding: 0;   
+nav {
+	display: table-cell;
+	vertical-align: middle;	
 }
 
-.tab-menu li {
-  display: inline-block;    
-  text-align: center;
-  height: 80px;
-  width: 75px;
+.navigation-bar {
+	list-style-type: none;
+	margin-left: 40%;		
 }
 
-.tab-menu li:hover, .active, .social img {
-  background-color: rgb(232, 76, 61);      
+.navigation-bar li {	
+	float: left;	
+	font-size: 13px;
+  	font-family: "FjallaOne";
+  	color: rgb(231, 231, 231);
+  	text-transform: uppercase;	 	  
 }
 
-footer { 
-  position: relative;
-  top: 2187px;
-  background-color: rgb(32, 38, 40);
-  height: 204px;
-  width: 1920px;    
+.navigation-bar-selected, .navigation-bar li:hover {
+	background-color: rgb(232, 76, 61);
 }
 
-.social {  
-  border-radius: 50px 50px;
-  left: 1513.937px;
-  top: 70px;    
-  height: 43px;
-  position: absolute;
-}
-
-.social img {
-  margin: 0 10px;
-  border-radius: 50px 50px;
+.clear-fix {
+	clear: both;
 }
