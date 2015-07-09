@@ -1,15 +1,56 @@
-header {
-	display: table;
+body {
+	margin: 0;
 }
 
-.site-name {
+.container {
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);    
+  max-height: 2391px;
+  max-width: 1920px;  
+  position: relative;      
+}
+
+header {
+  background-color: rgb(32, 38, 40);    
+  display: table;
+  width: 100%;
+}
+
+.site-name-container {	
 	display: table-cell;
+	vertical-align: middle;	
+}
+
+.site-name-container h1 {
+  font-size: 25px;
+  font-family: "FjallaOne";
+  color: rgb(231, 231, 231);
+  text-transform: uppercase;
+  margin-left: 70%;          
 }
 
 nav {
 	display: table-cell;
+	vertical-align: middle;	
 }
 
-.header-navigation ul{	
-	list-style-type: none;	
+.navigation-bar {
+	list-style-type: none;
+	margin-left: 40%;		
+}
+
+.navigation-bar li {	
+	float: left;	
+	font-size: 13px;
+  	font-family: "FjallaOne";
+  	color: rgb(231, 231, 231);
+  	text-transform: uppercase;	 	  
+}
+
+.navigation-bar-selected, .navigation-bar li:hover {
+	background-color: rgb(232, 76, 61);
+}
+
+.clear-fix {
+	clear: both;
 }
