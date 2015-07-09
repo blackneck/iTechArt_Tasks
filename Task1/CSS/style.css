@@ -1,3 +1,9 @@
+.section-content {
+	display: table;		
+	width: 100%;
+	margin-left: 25%;	
+}
+
 body {
 	margin: 0;
 }
@@ -11,9 +17,12 @@ body {
 }
 
 header {
-  background-color: rgb(32, 38, 40);    
-  display: table;
-  width: 100%;
+  background-color: rgb(32, 38, 40);          
+}
+
+.header-content {
+	display: table;
+	width: 100%;
 }
 
 .site-name-container {	
@@ -25,26 +34,26 @@ header {
   font-size: 25px;
   font-family: "FjallaOne";
   color: rgb(231, 231, 231);
-  text-transform: uppercase;
-  margin-left: 70%;          
+  text-transform: uppercase;         
 }
 
 nav {
 	display: table-cell;
-	vertical-align: middle;	
+	vertical-align: middle;				
 }
 
 .navigation-bar {
-	list-style-type: none;
-	margin-left: 40%;		
+	list-style-type: none;		
+	padding: 0;			
 }
 
 .navigation-bar li {	
-	float: left;	
+	float: left;			
 	font-size: 13px;
   	font-family: "FjallaOne";
   	color: rgb(231, 231, 231);
-  	text-transform: uppercase;	 	  
+  	text-transform: uppercase;	 		
+	text-align: center;							  		
 }
 
 .navigation-bar-selected, .navigation-bar li:hover {
@@ -53,4 +62,17 @@ nav {
 
 .clear-fix {
 	clear: both;
+}
+
+.banner {
+	overflow: hidden;
+}
+
+.services {
+	background-image: url(../img/services_bg.jpg);
+}
+
+.service {
+	display: table-cell;
+	width: 33%;
 }
