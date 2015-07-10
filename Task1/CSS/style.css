@@ -1,8 +1,12 @@
 .section-content {
 	display: table;		
-	width: 50%;	
-	display: table;	
-	margin-left: 25%;				
+	width: 50%;				
+	margin-left: 25%;							
+}
+
+.section-content ul {
+	list-style-type: none;
+	padding: 0;
 }
 
 body {
@@ -70,11 +74,15 @@ nav {
 
 .services {
 	background-image: url(../img/services_bg.jpg);
+	padding: 4% 0 ;
 }
 
 .service {
-	display: table-cell;	
-	width: 33%;
+	display: table-cell;			
+}
+
+.service-wrap {
+	margin-right: 10px;	
 }
 
 .service img {
@@ -91,6 +99,50 @@ nav {
 }
 
 .service-discription {
-	padding-left: 70px;
-	margin-left: 30px; 
+	padding-left: 30px;
+	margin-left: 70px; 	
+}
+
+.about {
+	padding: 4% 0 ;
+}
+
+.about-img {
+	float: right;		
+	padding: 0;	
+}
+
+.about-header {
+	width: 66%;
+	margin: 0;
+}
+
+.about-header h1 {
+	font-size: 21px;
+  	font-family: "FjallaOne";
+  	color: rgb(32, 38, 40);
+  	text-transform: uppercase;	
+}
+
+.about-header h2 {
+	font-size: 20px;
+  	font-family: "Lato";
+  	color: rgb(232, 76, 61);
+}
+
+.about-discription {
+	width: 66%;
+}
+
+.about-discription ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.about-discription ul li {
+	float: left;		
+}
+
+.about-paragraph {
+	width: 40%;	
 }
