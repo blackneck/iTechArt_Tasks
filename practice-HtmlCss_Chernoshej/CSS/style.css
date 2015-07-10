@@ -1,11 +1,9 @@
 .section-content {
-	display: table;		
+	display: inline-table;		
 	width: 50%;				
-	margin-left: 25%;							
-}
-
-.section {	
-	padding: 4% 0 ;
+	margin-left: 25%;			
+	margin-bottom: 2%;	
+	margin-top: 2%;			
 }
 
 p {
@@ -24,14 +22,14 @@ body {
 }
 
 .container {
-  margin: 0 auto;
-  background-color: rgb(255, 255, 255);    
-  max-height: 2391px;
-  max-width: 1920px;      
+  	margin: 0 auto;
+  	background-color: rgb(255, 255, 255);    
+  	max-height: 2391px;
+  	max-width: 1920px;      
 }
 
 header {
-  background-color: rgb(32, 38, 40);          
+  background-color: rgb(32, 38, 40);            
 }
 
 .site-name-container {		
@@ -41,14 +39,15 @@ header {
 }
 
 .site-name-container h1 {
-  font-size: 25px;
-  font-family: "FjallaOne";
-  color: rgb(231, 231, 231);
-  text-transform: uppercase;         
+  	font-size: 25px;
+  	font-family: "FjallaOne";
+  	color: rgb(231, 231, 231);
+  	text-transform: uppercase;         
 }
 
 nav {
-	display: table-cell;				
+	display: table-cell;		
+	vertical-align: middle;			
 }
 
 .navigation-bar {
@@ -82,22 +81,13 @@ nav {
 	max-width: 100%;
 }
 
-.services {
-	background-image: url(../img/services_bg.jpg);	
+.services-bg {	
+	background-color: #e7e7e7;	
 }
 
-.service {
-	display: table-cell;			
-}
-
-.service-wrap {
-	margin-right: 10px;	
-}
-
-.service img {
-	height: 70px;
-	width: 70px;
-	float: left;
+.services div {
+	
+	float: left;	
 }
 
 .service h2 {	
@@ -156,9 +146,62 @@ nav {
 
 .subscription {
 	background: rgb(232, 76, 61);
+	border-radius: 10px 10px;
+	padding: 0;
 }
 
-.subscription ul li {
-	margin: 10px;
-	display: inline-block;
+.subscription li {
+	float: left;
+	list-style-type: none;
+}
+
+.testimonial {
+	width: 50%;
+	margin: 40px;	
+}
+
+.testimonial img {
+	margin-top: 20px;
+}
+
+.testimonial-words {	
+	width: 70%;		
+}
+
+.testimonial li {	
+	margin-right: 20px;	
+}
+
+
+.subscription h1 {
+	font-size: 21px;
+  	font-family: "FjallaOne";
+	text-transform: uppercase;
+  	color: rgb(255, 255, 255);
+		  	
+}
+
+.subscription blockquote {
+	font-size: 16px;
+  	font-family: "Lato";
+  	color: rgb(255, 255, 255);	
+	  margin: 0;
+}
+
+.subscription span {
+	font-size: 14px;
+  	font-family: "Lato";
+  	color: rgb(255, 255, 255);
+  	font-style: italic;	
+}
+
+.contact div {
+	display: table-cell;	
+}
+
+.contact h1 {
+	font-size: 21px;
+  	font-family: "FjallaOne";
+  	color: rgb(32, 38, 40);
+  	text-transform: uppercase;	
 }
