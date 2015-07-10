@@ -81,23 +81,13 @@ nav {
 	max-width: 100%;
 }
 
-.services {	
+.services-bg {	
 	background-color: #e7e7e7;	
 }
 
-.service {
-	display: table-cell;	
-	box-sizing: border-box;			
-}
-
-.service-wrap {
-	margin-right: 10px;	
-}
-
-.service img {
-	height: 70px;
-	width: 70px;
-	float: left;
+.services div {
+	
+	float: left;	
 }
 
 .service h2 {	
