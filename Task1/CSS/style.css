@@ -4,6 +4,16 @@
 	margin-left: 25%;							
 }
 
+.section {	
+	padding: 4% 0 ;
+}
+
+p {
+	font-size: 14px;
+  	font-family: "Lato";
+  	color: rgb(118, 124, 126);
+}
+
 .section-content ul {
 	list-style-type: none;
 	padding: 0;
@@ -73,8 +83,7 @@ nav {
 }
 
 .services {
-	background-image: url(../img/services_bg.jpg);
-	padding: 4% 0 ;
+	background-image: url(../img/services_bg.jpg);	
 }
 
 .service {
@@ -103,10 +112,6 @@ nav {
 	margin-left: 70px; 	
 }
 
-.about {
-	padding: 4% 0 ;
-}
-
 .about-img {
 	float: right;		
 	padding: 0;	
@@ -127,6 +132,7 @@ nav {
 .about-header h2 {
 	font-size: 20px;
   	font-family: "Lato";
+	width: 33%;
   	color: rgb(232, 76, 61);
 }
 
@@ -145,4 +151,14 @@ nav {
 
 .about-paragraph {
 	width: 40%;	
+	margin-right: 10px;
+}
+
+.subscription {
+	background: rgb(232, 76, 61);
+}
+
+.subscription ul li {
+	margin: 10px;
+	display: inline-block;
 }

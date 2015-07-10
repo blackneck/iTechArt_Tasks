@@ -1,0 +1,164 @@
+.section-content {
+	display: table;		
+	width: 50%;				
+	margin-left: 25%;							
+}
+
+.section {	
+	padding: 4% 0 ;
+}
+
+p {
+	font-size: 14px;
+  	font-family: "Lato";
+  	color: rgb(118, 124, 126);
+}
+
+.section-content ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);    
+  max-height: 2391px;
+  max-width: 1920px;      
+}
+
+header {
+  background-color: rgb(32, 38, 40);          
+}
+
+.site-name-container {		
+	display: table-cell;
+	vertical-align: middle;	
+	width: 50%;
+}
+
+.site-name-container h1 {
+  font-size: 25px;
+  font-family: "FjallaOne";
+  color: rgb(231, 231, 231);
+  text-transform: uppercase;         
+}
+
+nav {
+	display: table-cell;				
+}
+
+.navigation-bar {
+	list-style-type: none;		
+	padding: 0;			
+}
+
+.navigation-bar li {	
+	float: left;			
+	font-size: 13px;
+  	font-family: "FjallaOne";
+  	color: rgb(231, 231, 231);
+  	text-transform: uppercase;	 		
+	text-align: center;							  		
+}
+
+.navigation-bar-selected, .navigation-bar li:hover {
+	background-color: rgb(232, 76, 61);
+}
+
+.clear-fix {
+	clear: both;
+}
+
+.banner {
+	overflow: hidden;
+}
+
+.banner-slider img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.services {
+	background-image: url(../img/services_bg.jpg);	
+}
+
+.service {
+	display: table-cell;			
+}
+
+.service-wrap {
+	margin-right: 10px;	
+}
+
+.service img {
+	height: 70px;
+	width: 70px;
+	float: left;
+}
+
+.service h2 {	
+	font-size: 21px;
+	font-family: "FjallaOne";
+  	color: rgb(32, 38, 40);
+  	text-transform: uppercase;	
+}
+
+.service-discription {
+	padding-left: 30px;
+	margin-left: 70px; 	
+}
+
+.about-img {
+	float: right;		
+	padding: 0;	
+}
+
+.about-header {
+	width: 66%;
+	margin: 0;
+}
+
+.about-header h1 {
+	font-size: 21px;
+  	font-family: "FjallaOne";
+  	color: rgb(32, 38, 40);
+  	text-transform: uppercase;	
+}
+
+.about-header h2 {
+	font-size: 20px;
+  	font-family: "Lato";
+	width: 33%;
+  	color: rgb(232, 76, 61);
+}
+
+.about-discription {
+	width: 66%;
+}
+
+.about-discription ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.about-discription ul li {
+	float: left;		
+}
+
+.about-paragraph {
+	width: 40%;	
+	margin-right: 10px;
+}
+
+.subscription {
+	background: rgb(232, 76, 61);
+}
+
+.subscription ul li {
+	margin: 10px;
+	display: inline-block;
+}
