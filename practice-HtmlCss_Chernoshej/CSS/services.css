@@ -1,0 +1,43 @@
+body {
+	margin: 0;	
+}
+
+.services {
+	background-color: #e7e7e7;
+	align-content: center;		
+}
+
+.service {
+	text-align: center;
+	float: left;	
+	margin-right: 30px;	
+}
+
+.service img {
+	float: left;
+	height: 70px;
+	width: 70px;
+}
+
+.service h1 {
+	font-size: 21px;
+  	font-family: "FjallaOne";
+  	color: rgb(32, 38, 40);
+  	text-transform: uppercase;	
+}
+
+.service p {
+	font-size: 14px;
+  	font-family: "Lato";
+  	color: rgb(118, 124, 126);	
+}
+
+.service-discription {
+	margin-left: 70px;
+	padding-left: 30px;	
+}
+
+.clear-fix {
+	clear: both;
+}
+

@@ -82,36 +82,6 @@ nav {
 	max-width: 100%;
 }
 
-.services {
-	background-image: url(../img/services_bg.jpg);	
-}
-
-.service {
-	display: table-cell;			
-}
-
-.service-wrap {
-	margin-right: 10px;	
-}
-
-.service img {
-	height: 70px;
-	width: 70px;
-	float: left;
-}
-
-.service h2 {	
-	font-size: 21px;
-	font-family: "FjallaOne";
-  	color: rgb(32, 38, 40);
-  	text-transform: uppercase;	
-}
-
-.service-discription {
-	padding-left: 30px;
-	margin-left: 70px; 	
-}
-
 .about-img {
 	float: right;		
 	padding: 0;	
