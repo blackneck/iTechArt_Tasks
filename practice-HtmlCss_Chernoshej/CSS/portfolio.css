@@ -1,0 +1,41 @@
+.portfolio {
+	display: table;
+}
+
+.portfolio h1 {
+  font-size: 21px;
+  font-family: "FjallaOne";
+  color: rgb(32, 38, 40);
+  text-transform: uppercase;
+  margin-bottom: 30px;	
+}
+
+.portfolio p {
+  font-size: 14px;
+  font-family: "Lato";
+  color: rgb(118, 124, 126);	  
+}
+
+.portfolio-section {
+	display: table-cell;	
+	width: 33%;		
+}
+
+.portfolio-discription-section {
+	padding-top: 30px;
+}
+
+.portfolio-discription-section img {
+	float: left;
+}
+
+.portfolio-discription-section p {
+	margin-left: 70px;
+	padding-left: 30px;		
+	padding-right: 30px;
+}
+
+.clear-fix {
+	clear: both;
+}
+
