@@ -1,22 +1,16 @@
-.section-content {
-	display: table;		
-	width: 50%;				
-	margin-left: 25%;							
+.section-content {	
+	padding: 0 15%;													
 }
 
 .section {	
-	padding: 4% 0 ;
+	padding: 4% 0 ;	
+	
 }
 
 p {
 	font-size: 14px;
   	font-family: "Lato";
   	color: rgb(118, 124, 126);
-}
-
-.section-content ul {
-	list-style-type: none;
-	padding: 0;
 }
 
 body {
@@ -80,55 +74,4 @@ nav {
 .banner-slider img {
 	max-height: 100%;
 	max-width: 100%;
-}
-
-.about-img {
-	float: right;		
-	padding: 0;	
-}
-
-.about-header {
-	width: 66%;
-	margin: 0;
-}
-
-.about-header h1 {
-	font-size: 21px;
-  	font-family: "FjallaOne";
-  	color: rgb(32, 38, 40);
-  	text-transform: uppercase;	
-}
-
-.about-header h2 {
-	font-size: 20px;
-  	font-family: "Lato";
-	width: 33%;
-  	color: rgb(232, 76, 61);
-}
-
-.about-discription {
-	width: 66%;
-}
-
-.about-discription ul {
-	list-style-type: none;
-	padding: 0;
-}
-
-.about-discription ul li {
-	float: left;		
-}
-
-.about-paragraph {
-	width: 40%;	
-	margin-right: 10px;
-}
-
-.subscription {
-	background: rgb(232, 76, 61);
-}
-
-.subscription ul li {
-	margin: 10px;
-	display: inline-block;
 }

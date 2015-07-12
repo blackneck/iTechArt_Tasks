@@ -1,0 +1,54 @@
+.about {
+	
+}
+
+.about-image {
+	float: right;  
+}
+
+.about-info {
+  /*width: 50%;*/
+}
+
+.about-header {
+  width: 60%;
+}
+
+.about-header h2 {
+	font-size: 20px;
+  	font-family: "Lato";
+  	color: rgb(232, 76, 61);	
+}
+
+.about-header h1 {
+  font-size: 21px;
+  font-family: "FjallaOne";
+  color: rgb(32, 38, 40);
+  text-transform: uppercase;	
+}
+
+.about-discription {  
+  float: left;
+  width: 30%;
+  /*width: 300px;*/
+  margin-right: 30px;
+}
+
+.about-discription h3 {
+  font-size: 16px;
+  font-family: "Lato";
+  color: rgb(32, 38, 40);
+  font-weight: bold;  
+}
+
+.about-discription p {
+  font-size: 14px;
+  font-family: "Lato";  
+  color: rgb(118, 124, 126);  
+}
+
+
+.clear-fix {
+	clear: both;
+}
+
