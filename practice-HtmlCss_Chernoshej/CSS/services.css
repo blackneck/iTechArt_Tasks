@@ -4,8 +4,8 @@
 }
 
 .service {			
-	width: 30%;
-	/*width: 300px;	*/
+	/*width: 30%;*/
+	width: 300px;	
 	float: left;						
 	margin-right: 30px;			
 }
