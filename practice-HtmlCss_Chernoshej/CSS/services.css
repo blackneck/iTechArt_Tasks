@@ -1,11 +1,10 @@
 
 .services {	
-	background-color: #e7e7e7;	
+	background-color: #e7e7e7;		
 }
 
 .service {			
-	/*width: 30%;*/
-	width: 300px;	
+	width: 31%;	
 	float: left;						
 	margin-right: 30px;			
 }
