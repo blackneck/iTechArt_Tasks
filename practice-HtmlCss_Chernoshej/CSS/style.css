@@ -4,6 +4,10 @@
 	padding: 4% 0 ;	
 }
 
+.header-content {	
+	margin-left: 15%;
+	margin-right: 15%;
+}
 
 p {
 	font-size: 14px;
@@ -22,42 +26,29 @@ body {
   max-width: 1920px;      
 }
 
-header {
-  background-color: rgb(32, 38, 40);          
-}
-
-.site-name-container {		
-	display: table-cell;
-	vertical-align: middle;	
-	width: 50%;
-}
-
-.site-name-container h1 {
-  font-size: 25px;
-  font-family: "FjallaOne";
-  color: rgb(231, 231, 231);
-  text-transform: uppercase;         
-}
-
-nav {
-	display: table-cell;				
-}
-
-.navigation-bar {
-	list-style-type: none;		
-	padding: 0;			
-}
-
-.navigation-bar li {	
-	float: left;			
-	font-size: 13px;
+header h1 {	
+  	font-size: 25px;
   	font-family: "FjallaOne";
   	color: rgb(231, 231, 231);
-  	text-transform: uppercase;	 		
-	text-align: center;							  		
+  	text-transform: uppercase;	
+	display: table-cell;
 }
 
-.navigation-bar-selected, .navigation-bar li:hover {
+nav {	
+	display: table-cell;
+	margin: 0;
+	padding: 0;
+	width: 50%;	
+}
+nav ul {
+	list-style-type: none;
+}
+
+nav li {
+	float: left;
+}
+
+nav li:hover {
 	background-color: rgb(232, 76, 61);
 }
 
