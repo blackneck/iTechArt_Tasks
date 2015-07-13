@@ -1,5 +1,6 @@
 .portfolio {
-	display: table;
+	display: table;  
+  overflow: hidden;
 }
 
 .portfolio h1 {
@@ -14,22 +15,28 @@
   font-family: "Lato";
   color: rgb(232, 76, 61);	
   margin-left: 22px;
-  padding-left: 30px;
+  padding-left: 30px;  
+}
+
+.portfolio hr {
+  margin: 30px 0;
 }
 
 .portfolio p {
   font-size: 14px;
   font-family: "Lato";
-  color: rgb(118, 124, 126);	   
+  color: rgb(118, 124, 126);
+  padding-top: 30px;	   
 }
 
 .portfolio-section {
 	display: table-cell;	
-  width: 33%;	    
+  width: 33%;	          
+  padding-right: 30px;      
+  padding-bottom: 0;    
 }
 
-.portfolio-discription-section {
-	padding-top: 30px;  
+.portfolio-discription-section {	    
 }
 
 .portfolio-discription-section img {
@@ -47,7 +54,7 @@
   background-color: #e7e7e7;
   border-radius: 10px;
   padding-top: 30px;
-  margin-right: 30px;
+  padding-right: 30px;
 }
 
 .portfolio-mail-section {
@@ -56,15 +63,15 @@
   
 }
 
+.portfolio-mail-section p {
+  padding-top: 20px;
+}
+
 .portfolio-mail-section img {  
   margin-top: 25px;
   margin-bottom: 25px;
 }
 
-.portfolio-contact-section img {  
-  float: left;    
-  margin-top: 15px;
-}
 
 .portfolio-mail-section input {
   margin-top: 25px;
@@ -80,16 +87,19 @@
   height: 75px;
 }
 
-.portfolio-contact-section {
-  padding-top: 30px;
+.portfolio-contact-section {  
 }
 
 .portfolio-contact-section p {
 	margin-left: 22px;
   padding-left: 30px;		
-	padding-right: 30px;
+  padding-top: 0;	
 }
 
+.portfolio-contact-section img {  
+  float: left;    
+  /*margin-top: 15px;*/
+}
 
 .clear-fix {
 	clear: both;
