@@ -46,11 +46,18 @@ nav ul {
 
 nav li {
 	float: left;
+	padding-right: 10px;
+	font-size: 13px;
+  	font-family: "FjallaOne";
+  	color: rgb(231, 231, 231);
+  	text-transform: uppercase;
 }
 
 nav li:hover {
 	background-color: rgb(232, 76, 61);
 }
+
+
 
 .clear-fix {
 	clear: both;
