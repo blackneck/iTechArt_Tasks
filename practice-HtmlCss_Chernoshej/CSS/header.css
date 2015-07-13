@@ -24,6 +24,11 @@ header {
 
 .navigation span:hover {
 	background-color: rgb(232, 76, 61);
+	cursor: pointer;
+}
+
+.active {
+	background-color: rgb(232, 76, 61);
 }
 
 .navigation span {

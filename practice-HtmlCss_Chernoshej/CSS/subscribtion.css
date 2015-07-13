@@ -35,6 +35,13 @@
 	padding-left: 30px;
 }
 
+.testimonial-text span {
+	font-size: 16px;
+  	font-family: "Lato";
+  	color: rgb(255, 255, 255);
+	font-style: italic;	   
+}
+
 .subscribe {			
 	padding-left: 30px;	
 	margin-right: 30px;
