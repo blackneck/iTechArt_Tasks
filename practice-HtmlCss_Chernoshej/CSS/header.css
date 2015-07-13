@@ -11,7 +11,7 @@ header {
 .site-name h1{	
 	padding-top: 15px;
 	font-size: 25px;
-  	font-family: "FjallaOne";
+  	font-family: "Fjalla One";
   	color: rgb(231, 231, 231);
   	text-transform: uppercase;
 }
@@ -33,7 +33,7 @@ header {
 
 .navigation span {
   font-size: 13px;
-  font-family: "FjallaOne";
+  font-family: "Fjalla One";
   color: rgb(231, 231, 231);
   text-transform: uppercase;	
 }
