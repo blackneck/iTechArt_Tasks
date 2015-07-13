@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 .section-content {	
 	margin-left: 15%;
 	margin-right: 15%;
@@ -8,14 +8,6 @@
 .header-content {	
 	margin-left: 15%;
 	margin-right: 15%;
-=======
-.section-content {
-	display: inline-table;		
-	width: 50%;				
-	margin-left: 25%;			
-	margin-bottom: 2%;	
-	margin-top: 2%;			
->>>>>>> origin/master
 }
 
 p {
@@ -35,7 +27,6 @@ body {
   	max-width: 1920px;      
 }
 
-<<<<<<< HEAD
 header h1 {	
   	font-size: 25px;
   	font-family: "FjallaOne";
@@ -49,7 +40,7 @@ nav {
 	margin: 0;
 	padding: 0;
 	width: 50%;	
-=======
+}
 header {
   background-color: rgb(32, 38, 40);            
 }
@@ -70,7 +61,6 @@ header {
 nav {
 	display: table-cell;		
 	vertical-align: middle;			
->>>>>>> origin/master
 }
 nav ul {
 	list-style-type: none;
@@ -103,131 +93,3 @@ nav li:hover {
 	max-height: 100%;
 	max-width: 100%;
 }
-<<<<<<< HEAD
-=======
-
-.services-bg {	
-	background-color: #e7e7e7;	
-}
-
-.services div {
-	
-	float: left;	
-}
-
-.service h2 {	
-	font-size: 21px;
-	font-family: "FjallaOne";
-  	color: rgb(32, 38, 40);
-  	text-transform: uppercase;	
-}
-
-.service-discription {
-	padding-left: 30px;
-	margin-left: 70px; 	
-}
-
-.about-img {
-	float: right;		
-	padding: 0;	
-}
-
-.about-header {
-	width: 66%;
-	margin: 0;
-}
-
-.about-header h1 {
-	font-size: 21px;
-  	font-family: "FjallaOne";
-  	color: rgb(32, 38, 40);
-  	text-transform: uppercase;	
-}
-
-.about-header h2 {
-	font-size: 20px;
-  	font-family: "Lato";
-	width: 33%;
-  	color: rgb(232, 76, 61);
-}
-
-.about-discription {
-	width: 66%;
-}
-
-.about-discription ul {
-	list-style-type: none;
-	padding: 0;
-}
-
-.about-discription ul li {
-	float: left;		
-}
-
-.about-paragraph {
-	width: 40%;	
-	margin-right: 10px;
-}
-
-.subscription {
-	background: rgb(232, 76, 61);
-	border-radius: 10px 10px;
-	padding: 0;
-}
-
-.subscription li {
-	float: left;
-	list-style-type: none;
-}
-
-.testimonial {
-	width: 50%;
-	margin: 40px;	
-}
-
-.testimonial img {
-	margin-top: 20px;
-}
-
-.testimonial-words {	
-	width: 70%;		
-}
-
-.testimonial li {	
-	margin-right: 20px;	
-}
-
-
-.subscription h1 {
-	font-size: 21px;
-  	font-family: "FjallaOne";
-	text-transform: uppercase;
-  	color: rgb(255, 255, 255);
-		  	
-}
-
-.subscription blockquote {
-	font-size: 16px;
-  	font-family: "Lato";
-  	color: rgb(255, 255, 255);	
-	  margin: 0;
-}
-
-.subscription span {
-	font-size: 14px;
-  	font-family: "Lato";
-  	color: rgb(255, 255, 255);
-  	font-style: italic;	
-}
-
-.contact div {
-	display: table-cell;	
-}
-
-.contact h1 {
-	font-size: 21px;
-  	font-family: "FjallaOne";
-  	color: rgb(32, 38, 40);
-  	text-transform: uppercase;	
-}
->>>>>>> origin/master
