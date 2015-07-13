@@ -1,0 +1,38 @@
+header {
+	background-color: #202628;
+	display: table;
+	width: 100%;			
+}
+
+.site-name {
+	display: table-cell;
+}
+
+.site-name h1{	
+	padding-top: 15px;
+	font-size: 25px;
+  	font-family: "FjallaOne";
+  	color: rgb(231, 231, 231);
+  	text-transform: uppercase;
+}
+
+.navigation {
+	height: 100%;
+	float: right;	
+	display: table-cell;
+}
+
+.navigation span:hover {
+	background-color: rgb(232, 76, 61);
+}
+
+.navigation span {
+  font-size: 13px;
+  font-family: "FjallaOne";
+  color: rgb(231, 231, 231);
+  text-transform: uppercase;	
+}
+
+.clear-fix {
+	clear: both;
+}

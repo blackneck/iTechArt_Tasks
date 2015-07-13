@@ -1,0 +1,64 @@
+.subscribtion {
+	background-color: #e84c3d;
+	border-radius: 10px;
+	
+}
+
+.testimonial {
+	float: left;	
+	margin-right: 30px;
+	margin-left: 30px;		
+}
+
+.testimonial img {
+	float: left;	
+	width: 70px;
+	height: 70px;
+}
+
+
+.testimonial h1 {
+  font-size: 21px;
+  font-family: "FjallaOne";
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+}
+
+.testimonial p {
+  font-size: 16px;
+  font-family: "Lato";
+  color: rgb(255, 255, 255);  	
+}
+
+.testimonial-text {
+	margin-left: 70px;
+	padding-left: 30px;
+}
+
+.subscribe {			
+	padding-left: 30px;	
+	margin-right: 30px;
+	float: right;			
+}
+
+.subscribe h1 {	
+  font-size: 21px;
+  font-family: "FjallaOne";
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+}
+
+.subscribe-email{
+	border: 5px solid white;  
+	border-radius: 50px;    
+	height: 41px;		
+	box-sizing: border-box;			
+}
+
+.subscribe-submit{					
+}
+
+
+.clear-fix {
+	clear: both;
+}
