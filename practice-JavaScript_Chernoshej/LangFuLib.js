@@ -20,14 +20,8 @@ var LangFu = (function () {
             return trueType(entity) === "Date";
         },
 
-        take: function (source, count) {
-
-            if (trueType(source) !== "Array")
-                throw new TypeError("Array was excpected");
-            else if (count > source.length)
-                throw new RangeError("count is greater than array length");
-            else
-                return source.slice(0, count);
+        take: function (source, count) {                        
+            return source.slice(0, count);
         },
         
         forEach: function (source, action) {
