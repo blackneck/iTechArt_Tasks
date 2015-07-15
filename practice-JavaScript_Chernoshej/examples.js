@@ -1,76 +1,41 @@
-//define LangFu library
-var LangFu = (function () {
-
-    function trueType(entity) {
-        var toString = Object.prototype.toString,
-            val = toString.call(entity);
-
-        return val.substring(8, val.length - 1);
-    }
-
-    return {
-        isArray: function (entity) {
-            return trueType(entity) === "Array";
-        },
-
-        isBoolean: function (entity) {
-            return trueType(entity) === "Boolean";
-        },
-
-        isDate: function (entity) {
-            return trueType(entity) === "Date";
-        },
-
-        take: function (source, count) {
-
-            if (trueType(source) !== "Array")
-                throw new TypeError("Array was excpected");
-            else if (count > source.length)
-                throw new RangeError("count is greater than array length");
-            else
-                return source.slice(0, count);
-        },
-
-        forEach: function (source, action) {
-            for (var i in source)
-                source[i] = action(source[i]);
-        }
-    }
-} ());
-
-//define asChain object
-var asChain = function (array) {
-    return {
-        take: function (count) {
-            array = LangFu.take(array, count);
-            return this;
-        },
-
-        forEach: function (action) {
-            LangFu.forEach(array, action);
-            return this;
-        },
-
-        toArray: function () {
-            return array;
-        }
-    }
-}
-
 var a = [1, 2, 3, 4, 5, 6, 7, 8, 9],
     d = new Date(),
     b = false,
     square = function (i) {
         return i * i;
     }
+    
+    
+console.log("a = " + a);
+console.log("d = " + d);
+console.log("b = " + b);
+console.log("square = " + square);    
+    
+console.log("method:\"isArray(entity)\" argument: a");    
+console.log("result : " + LangFu.isArray(a));
 
-LangFu.isArray(a); //true
-LangFu.isBoolean(b) //true
-LangFu.isDate(d); //true
+console.log("method:\"isArray(entity)\" argument: square");    
+console.log("result : " + LangFu.isArray(square));
 
-LangFu.take(a, 5) // [ 1, 2, 3, 4, 5 ]
+console.log("method:\"isBool(entity)\" argument: b");
+console.log("result : " + LangFu.isBoolean(b));
 
-LangFu.forEach(a, square);
-console.log(a) // [ 1, 4, 9, 16, 25, 36, 49, 64, 81 ]
+console.log("method:\"isBool(entity)\" argument: empty string");
+console.log("result : " + LangFu.isBoolean(""));
 
-asChain(a).take(5).toArray(); //
+console.log("method:\"isDate(entity)\" argument: d");
+console.log("result : " + LangFu.isDate(d));
+
+console.log("method:\"take(source, count)\" arguments: a, 4.9");
+console.log("result : " + LangFu.take(a, 4.9));
+
+console.log("method:\"take(source, count)\" arguments: a, -4");
+console.log("result : " + LangFu.take(a, -4));
+
+console.log("method:\"forEach(source, action)\" arguments: a, square");
+LangFu.forEach(a, square)
+console.log("result : a = " + a );
+
+console.log("method:\"asChain(array)\" arguments: a");
+console.log("calling : LangFu.asChain(a).take(7).take(4).take(3).forEach(square).toArray()")
+console.log("result : " + LangFu.asChain(a).take(7).take(4).take(3).forEach(square).toArray());

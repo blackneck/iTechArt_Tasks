@@ -1,6 +1,6 @@
 var LangFu = (function () {
 
-    function trueType(entity) {                 
+    function trueType(entity) {
         var toString = Object.prototype.toString,
             val = toString.call(entity);
 
@@ -20,13 +20,31 @@ var LangFu = (function () {
             return trueType(entity) === "Date";
         },
 
-        take: function (source, count) {                        
+        take: function (source, count) {
             return source.slice(0, count);
         },
-        
+
         forEach: function (source, action) {
-            for(var i in source)
+            for (var i in source)
                 source[i] = action(source[i]);
         }
     }
-} ());
+}) ();
+
+LangFu.asChain = function (array) {
+    return {
+        take: function (count) {
+            array = LangFu.take(array, count);
+            return this;
+        },
+
+        forEach: function (action) {
+            LangFu.forEach(array, action);
+            return this;
+        },
+
+        toArray: function () {
+            return array;
+        }
+    }
+}
