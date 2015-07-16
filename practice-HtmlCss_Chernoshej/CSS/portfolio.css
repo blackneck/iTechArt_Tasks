@@ -1,6 +1,6 @@
 .portfolio {
 	display: table;  
-  overflow: hidden;
+  overflow: hidden;  
 }
 
 .portfolio h1 {
@@ -31,23 +31,26 @@
 
 .portfolio-section {
 	display: table-cell;	
-  width: 33%;	          
+  width: 33%;	         
+  height: 100%; 
   padding-right: 30px;      
   padding-bottom: 0;    
 }
 
-.portfolio-discription-section {	    
+.portfolio-discription-section  a {
+  color: rgb(232, 76, 61);	
+  text-decoration: none;    
 }
 
 .portfolio-discription-section img {
-	float: left;
-  margin-top: 15px;
+	float: left;  
 }
 
 .portfolio-discription-section p {
 	margin-left: 70px;
 	padding-left: 30px;		
 	padding-right: 30px;
+  padding-top: 0;
 }
 
 .portfolio-mail-section {
@@ -97,11 +100,9 @@
 }
 
 .portfolio-contact-section img {  
-  float: left;    
-  /*margin-top: 15px;*/
+  float: left;   
 }
 
 .clear-fix {
 	clear: both;
 }
-
