@@ -5,7 +5,7 @@
 }
 
 .service {			
-	/*width: 31%;	*/
+	width: 31%;	
 	/*float: left;						*/
 	display: table-cell;
 	margin-right: 30px;			
