@@ -54,7 +54,7 @@
 }
 
 .portfolio-mail-section {
-  background-color: #e7e7e7;
+  background-color: rgb(231, 231, 231);
   border-radius: 10px;
   padding-top: 30px;
   padding-right: 30px;
@@ -79,7 +79,7 @@
 .portfolio-mail-section input {
   margin-top: 25px;
   width: 100%;
-  border: 5px solid white;  
+  border: 5px solid rgb(255, 255, 255);  
 	border-radius: 50px;    
 	height: 41px;		
 	box-sizing: border-box;   
@@ -100,8 +100,7 @@
 }
 
 .portfolio-contact-section img {  
-  float: left;    
-  /*margin-top: 15px;*/
+  float: left;      
 }
 
 .clear-fix {

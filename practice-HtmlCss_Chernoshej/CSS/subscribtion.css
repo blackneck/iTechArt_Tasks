@@ -63,7 +63,7 @@
 }
 
 .subscribe-email input {
-	border: 5px solid white;  
+	border: 5px solid rgb(255, 255, 255);;  
 	border-radius: 50px;    
 	height: 41px;		
 	box-sizing: border-box;	
