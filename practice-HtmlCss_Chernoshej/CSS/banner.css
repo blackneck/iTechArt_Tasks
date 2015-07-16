@@ -1,0 +1,29 @@
+.banner {
+	background: url(../img/banner.png) 100% 100% no-repeat;
+}
+
+.banner-text {
+	width: 40%;
+}
+
+.banner-text img {
+	padding-top: 160px;
+}
+
+.banner-text a {
+	text-decoration: none;
+	font-size: 15px;
+  	font-family: "Fjalla One";
+  	color: rgb(232, 76, 61);	
+}
+
+.banner-text hr {
+	float : right;
+}
+
+.banner-text h1 {
+  font-size: 31px;
+  font-family: "Fjalla One";
+  color: rgb(231, 231, 231);
+  text-transform: uppercase;	
+}

@@ -1,0 +1,41 @@
+
+.services {	
+	background-color: #e7e7e7;
+	display: table;		
+}
+
+.service {			
+	width: 31%;	
+	/*float: left;						*/
+	display: table-cell;
+	margin-right: 30px;			
+}
+
+.service img {	
+	float: left;
+	height: 70px;
+	width: 70px;
+}
+
+.service-discription {	
+	margin-left: 70px;
+	padding-left: 30px;	
+}
+
+.service h1 {
+	font-size: 21px;
+  	font-family: "Fjalla One";
+  	color: rgb(32, 38, 40);
+  	text-transform: uppercase;	
+}
+
+.service p {
+	font-size: 14px;
+  	font-family: "Lato";
+  	color: rgb(118, 124, 126);	
+}
+
+.clear-fix {
+	clear: both;
+}
+
