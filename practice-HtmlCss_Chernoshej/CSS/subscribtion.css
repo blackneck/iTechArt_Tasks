@@ -11,7 +11,8 @@
 }
 
 .testimonial img {
-	float: left;	
+	float: left;
+	padding-top: 14px;	
 	width: 70px;
 	height: 70px;
 }
