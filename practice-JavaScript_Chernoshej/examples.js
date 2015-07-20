@@ -39,3 +39,11 @@ console.log("result : a = " + a );
 console.log("method:\"asChain(array)\" arguments: a");
 console.log("calling : LangFu.asChain(a).take(7).take(4).take(3).forEach(square).toArray()")
 console.log("result : " + LangFu.asChain(a).take(7).take(4).take(3).forEach(square).toArray());
+
+
+console.log("var c = LangFu.asChain(a).take(6);");
+console.log("var d = c.take(4);");
+var c = LangFu.asChain(a).take(6);
+var d = c.take(4);
+console.log(c.toArray());
+console.log(d.toArray());

@@ -34,13 +34,13 @@ var LangFu = (function () {
 LangFu.asChain = function (array) {
     return {
         take: function (count) {
-            array = LangFu.take(array, count);
-            return this;
+            var current = LangFu.take(array, count);
+            return LangFu.asChain(current);
         },
 
         forEach: function (action) {
             LangFu.forEach(array, action);
-            return this;
+            return LangFu.asChain(array);
         },
 
         toArray: function () {
