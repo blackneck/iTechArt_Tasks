@@ -6,9 +6,3 @@ function linearUnfold(callback, initialValue) {
 
 	return result;
 }
-
-function callback(x) {
-	return [x - 1, x > 0];
-}
-
-console.log(linearUnfold(callback, 15));

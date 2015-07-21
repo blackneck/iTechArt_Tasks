@@ -5,24 +5,12 @@ function curry(fn, n) {
   function getCurriedFn(prev) {
     return function (arg) {
       var args = prev.concat(arg);
-      if (args.length < n) {
 
+      if (args.length < n)
         return getCurriedFn(args);
-      } else {
-
+      else
         return fn.apply(this, args);
-      }
-    };
+    }
   }
-
   return getCurriedFn([]);
 }
-
-
-function sum(x, y, z) {
-  return x + y + z;
-}
-
-var f = curry(sum);
-
-console.log(f(1, 2)(3));
