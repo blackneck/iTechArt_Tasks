@@ -1,10 +1,9 @@
 var LangFu = (function () {
 
     function trueType(entity) {
-        var toString = Object.prototype.toString,
-            val = toString.call(entity);
+        var val = toString.call(entity);
 
-        return val.substring(8, val.length - 1);
+        return toString.call(entity).substring(8, val.length - 1);
     }
 
     return {
