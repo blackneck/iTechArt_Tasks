@@ -1,12 +1,10 @@
-function curry(fn, n) {
-  if (typeof n !== "number")
-    n = fn.length;
+function curry(fn) {
 
   function getCurriedFn(prev) {
     return function (arg) {
       var args = prev.concat(arg);
 
-      if (args.length < n)
+      if (args.length < fn.length)
         return getCurriedFn(args);
       else
         return fn.apply(this, args);
