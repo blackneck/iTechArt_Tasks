@@ -13,12 +13,22 @@ function sumarize(x, y, z) {
 	return x + y + z;
 }
 
-function makeArray(x) {
-	return [x - 1, x > 1];
+function makeArray(x) { 
+	if (x <= 1)
+		return false;
+	return [x - 1, x - 1];
+
 }
 
 function makeRandom(x) {
 	return Math.round(Math.random() * 10 * x);
+}
+
+
+function makeRandomArray(x) {
+	if (x <= 0)
+		return false;
+	return [Math.round(Math.random() * 10 * x), x - 1];
 }
 
 function isEven(x) {
@@ -60,8 +70,8 @@ console.log("linearFold(filter(isEven, array), sum) / evenCount");
 console.log(linearFold(filter(array, isEven), sum) / evenCount);
 
 console.log("problem8: sum of random numbers");
-console.log("solution: linearFold(map(makeRandom, linearUnfold(makeArray, 10)), sum)");
-console.log(linearFold(map(linearUnfold(makeArray, 10), makeRandom), sum));
+console.log("solution: linearFold(linearUnfold(makeRandomArray, 10), sum)");
+console.log("output: " + linearFold(linearUnfold(makeRandomArray, 10), sum));
 
 console.log("problem9: first(array, condition)");
 console.log("first(array, isEven)");
@@ -69,5 +79,5 @@ console.log("output: " + first(array, isEven));
 
 console.log("problem10: lazyEval(callback)");
 console.log("var addThisLater = lazyEval(sum, 5, 7)");
-var addThisLater = partial(sum, 5, 7)
+var addThisLater = partial(sum, 5, 9)
 console.log("output: " + addThisLater());

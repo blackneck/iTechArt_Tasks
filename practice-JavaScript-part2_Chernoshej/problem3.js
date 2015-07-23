@@ -9,7 +9,7 @@ function linearFold(array, callback, initialValue) {
 	}
 
 	for (; i < array.length; ++i) 
-		previous = callback(previous, array[i])	
+		previous = callback(previous, array[i], i, array)	
 
 	return previous;
 }

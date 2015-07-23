@@ -1,8 +1,9 @@
 function linearUnfold(callback, initialValue) {
-	var result = [initialValue];
+	var result = [],
+		val = [, initialValue];
 
-	while (callback(initialValue)[1]) 
-		result.push(initialValue = callback(initialValue)[0])
+	while (val = callback(val[1]))
+		result.push(val[0]);
 
 	return result;
 }
