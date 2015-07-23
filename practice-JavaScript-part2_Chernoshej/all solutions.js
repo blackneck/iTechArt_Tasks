@@ -13,15 +13,17 @@ function sumarize(x, y, z) {
 	return x + y + z;
 }
 
-function makeArray(x) {
+function makeArray(x) { 
 	if (x <= 1)
 		return false;
 	return [x - 1, x - 1];
+
 }
 
 function makeRandom(x) {
 	return Math.round(Math.random() * 10 * x);
 }
+
 
 function makeRandomArray(x) {
 	if (x <= 0)
