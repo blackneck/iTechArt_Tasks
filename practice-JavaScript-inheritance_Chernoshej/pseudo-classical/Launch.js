@@ -22,17 +22,8 @@ function Fish(name) {
 	Fish.superclass.constructor.call(this, name);
 }
 
-// function Rabbit(name) {
-// 	Rabbit.superclass.constructor.call(this, name);
-// }
-
-
 function Rabbit(name) {
-    Rabbit.superclass.constructor.apply(this, arguments);
-
-    this.run = function (speed) {
-        console.log(this.name + " is running with the speed " + speed);
-    }
+	Rabbit.superclass.constructor.call(this, name);
 }
 
 extend(Rabbit, Animal);
@@ -54,9 +45,9 @@ Fish.prototype.walk = function () {
 	console.log("I'm a fish - I can not walk!1");
 }
 
-// Rabbit.prototype.run = function (speed) {
-// 	console.log(this.name + " is running with the speed " + speed);
-// };
+Rabbit.prototype.run = function (speed) {
+	console.log(this.name + " is running with the speed " + speed);
+};
 
 
 var rabbit1 = new Rabbit("Roger"),
