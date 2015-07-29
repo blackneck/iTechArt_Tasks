@@ -1,0 +1,42 @@
+.content {
+	background: rgba(0, 0, 0, 0.4);
+	width: 70%;	
+	margin-left: 15%;	
+	text-align: center;	
+}
+
+.button {
+	height: 40px;
+	width: 40px;
+}
+
+.button:hover {
+	cursor: pointer;
+}
+
+.button:active {
+	opacity: 0.1;
+}
+
+img {
+	height: 200px;
+	width: 200px;	
+}
+
+
+.dish-name {
+	font-size: 36px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+table {
+	width: 40%;
+	float: left;	
+}
+
+.menu-item {	
+}
+
+.clear-fix {
+	clear: both;
+}
