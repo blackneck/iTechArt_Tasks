@@ -3,53 +3,65 @@
 	<head>
 		<meta charset="utf-8">
 		<link href="css/styles.css" rel="stylesheet" type="text/css" />
+		<link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 		<div class="content">
-			<table>
-				<thead>
-					<tr>
-						<th>name</th>
-						<th>photo</th>
-						<th>price</th>
-						<th>portion</th>
-					</tr>
-				</thead>
-				<tbody data-bind="foreach: menu">
-					<tr class="menu-item">
-						<td class="dish-name" data-bind="text: name"></td>
-						<td>
-							<img data-bind="attr: {src: photo}">
-						</td>
-						</td>
-						<td data-bind="text: price"></td>
-						<td data-bind="text: amount"></td>
-						<td>
-							<img class="button" src="img/add.png" data-bind="click: $root.addDish"></img>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			<table class="order">
-				<thead>
-					<tr>
-						<th>name</th>
-						<th>amount</th>
-					</tr>
-				</thead>
-				<tbody data-bind="foreach: order">
-					<tr>
-						<td data-bind="text: name"></td>
-						<td data-bind="text: amount"></td>
-					</tr>
-				</tbody>
-				<tfoot data-bind="text: totalPrice()"></tfoot>				
-			</table>
+			<div class="section">
+				<table>
+					<caption>Menu</caption>
+					<thead>
+						<tr>
+							<th>name</th>
+							<th>photo</th>
+							<th>price</th>
+						</tr>
+					</thead>
+					<tbody data-bind="foreach: menu">
+						<tr>
+							<td class="dish-name" data-bind="text: name"></td>
+							<td>
+								<img class="dish-photo" data-bind="attr: {src: photo}">
+							</td>
+							</td>
+							<td data-bind="text: price"></td>
+							<td>
+								<span class="button" data-bind="click: $root.addDish">&#xf055;</span>								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="section">
+				<table class="order">
+					<caption>Order</caption>
+					<thead>
+						<tr>
+							<th>name</th>
+							<th>price</th>
+						</tr>
+					</thead>
+					<tbody data-bind="foreach: order">
+						<tr>
+							<td class="dish-name" data-bind="text: name"></td>
+							<td data-bind="text: price"></td>
+							<td>
+								<span class="button" data-bind="click: $root.removeDish">&#xf056;</span>								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="section checkout">
+				<p data-bind="text: totalPrice()"></p>
+				<span class="button" data-bind="click: checkout">&#xf218;</span>				
+			</div>
 			<div class="clear-fix"></div>
 		</div>
 	</body>
-	<script type='text/javascript' src="js/knockout.js"></script>
-	<!--<script type='text/javascript' src="js/dishesModel.js"></script>-->
-	<script type='text/javascript' src="js/mainViewModel.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/InterfaceBlocker.js"></script>	
+	<script type="text/javascript" src="js/knockout.js"></script>
+	<script type="text/javascript" src="js/mainViewModel.js"></script>
 
 </html>
