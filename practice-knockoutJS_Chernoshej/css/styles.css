@@ -1,0 +1,112 @@
+body {
+	background: url("../img/background.jpg") no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	font-family: sans-serif;
+	color: rgb(245, 222, 179);;
+}
+
+.content {
+	background: rgba(10, 20, 10, 0.4);
+	width: 70%;	
+	margin-bottom: 5%;
+	margin-top: 5%;
+	margin-left: 15%;	
+	text-align: center;	
+	border-radius: 50px;
+}
+
+.section {		
+	border-radius: 50px;
+	border-left-style: dotted;
+	border-bottom-style: dotted;
+	width: 33%;
+	float: left;	
+}
+
+table {
+	width: 100%;	
+	height: 100%;	
+}
+
+caption {
+	font-size: 48px;
+	border-bottom-style: dotted;
+}
+
+.selected {
+	background: rgb(0, 150, 0);	
+}
+
+.button {	
+	-webkit-user-select: none;
+	font-size: 36px;
+	font-family: "FontAwesome";
+}
+
+.button:hover {
+	cursor: pointer;
+	opacity: 0.4;
+}
+
+.button:active {
+	opacity: 0.1;
+}
+
+.dish-name {
+	font-size: 24px;	
+}
+
+.dish-photo {
+	height: 75px;
+	width: 75px;
+	transition-duration: 100ms;
+}
+
+.dish-photo:hover {
+	cursor: pointer;
+}
+
+.dish-photo:active {
+	transform: scale(5);
+}
+
+
+.checkout {	
+	font-size: 54px;
+	padding-top: 10%;
+}
+
+.checkout span {	
+	font-size: 86px;
+}
+
+.additional-block {
+    background-color: rgb(25, 25, 25);
+    opacity:0.8;
+
+    width:100%;
+    height:100%;
+
+    position:fixed;
+    top:0;  
+	bottom:0;
+	left:0;
+	right:0;               
+}
+
+.additional-block img {    
+    width:64px; 
+     
+    display:block;  
+    margin:0 auto;   
+    margin-top:100px;    
+}
+
+.additional-block p {        
+    text-align:center;    
+}
+
+.clear-fix {
+	clear: both;
+}
