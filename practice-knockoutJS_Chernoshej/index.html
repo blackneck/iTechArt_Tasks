@@ -18,15 +18,14 @@
 						</tr>
 					</thead>
 					<tbody data-bind="foreach: menu">
-						<tr>
+						<tr class="menu-item">							
 							<td class="dish-name" data-bind="text: name"></td>
 							<td>
 								<img class="dish-photo" data-bind="attr: {src: photo}">
 							</td>
-							</td>
 							<td data-bind="text: price"></td>
 							<td>
-								<span class="button" data-bind="click: $root.addDish">&#xf055;</span>								
+								<span class="button" data-bind="click: $root.addDish">&#xf055;</span>
 							</td>
 						</tr>
 					</tbody>
@@ -36,31 +35,36 @@
 				<table class="order">
 					<caption>Order</caption>
 					<thead>
-						<tr>
+						<tr>							
 							<th>name</th>
 							<th>price</th>
+							<th>count</th>
 						</tr>
 					</thead>
 					<tbody data-bind="foreach: order">
 						<tr>
 							<td class="dish-name" data-bind="text: name"></td>
 							<td data-bind="text: price"></td>
+							<td data-bind="text: count"></td>
 							<td>
-								<span class="button" data-bind="click: $root.removeDish">&#xf056;</span>								
+								<span class="button" data-bind="click: $root.removeDish">&#xf056;</span>
 							</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 			<div class="section checkout">
-				<p data-bind="text: totalPrice()"></p>
-				<span class="button" data-bind="click: checkout">&#xf218;</span>				
+				<p>Total:
+					<p data-bind="text: totalPrice()"></p>
+				</p>
+				<span class="button" data-bind="visible: order().length, click: checkout">&#xf218;</span>
 			</div>
 			<div class="clear-fix"></div>
 		</div>
 	</body>
+	<script type="text/javascript" src="js/dataLayer.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="js/InterfaceBlocker.js"></script>	
+	<script type="text/javascript" src="js/InterfaceBlocker.js"></script>
 	<script type="text/javascript" src="js/knockout.js"></script>
 	<script type="text/javascript" src="js/mainViewModel.js"></script>
 

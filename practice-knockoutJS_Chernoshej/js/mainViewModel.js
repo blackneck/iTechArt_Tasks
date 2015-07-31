@@ -1,37 +1,64 @@
-function mainViewModel() {
+function convertData(rawData, callback) {
+	if (typeof callback === "undefined")
+		return rawData;
+	else
+		return callback.call(this, rawData);
+}
+
+function orderItem(name, price, count) {
+	var self = this;
+	self.name = name;
+	self.price = price;
+	self.count = ko.observable(count);
+}
+
+function mainViewModel(modelData) {
 
 	var self = this;
+
+	self.menu = convertData(modelData);
 
 	self.order = ko.observableArray([]);
 
 	self.totalPrice = ko.computed(function () {
 		var res = 0;
 		for (var i in self.order()) {
-			res += self.order()[i].price * self.order()[i].amount();
+			res += self.order()[i].price * self.order()[i].count();
 		}
-
-		return "total: " + res;
+		return res;
 	});
 
-	self.menu = [
-		{ name: "pizza", price: 180, amount: ko.observable(0), photo: "img/pizza.png" },
-		{ name: "soup", price: 50, amount: ko.observable(0), photo: "img/soup.png" },
-		{ name: "porridge", price: 20, amount: ko.observable(0), photo: "img/porridge.png" },
-		{ name: "lobster", price: 400, amount: ko.observable(0), photo: "img/lobster.png" },
-		{ name: "salad", price: 70, amount: ko.observable(0), photo: "img/salad.png" },
-		{ name: "bread", price: 10, amount: ko.observable(0), photo: "img/bread.png" },
-		{ name: "meat", price: 100, amount: ko.observable(0), photo: "img/meat.png" },
-		{ name: "apple", price: 20, amount: ko.observable(0), photo: "img/apple.png" },
-		{ name: "cola", price: 12, amount: ko.observable(0), photo: "img/cola.png" }
-	];
-
+	//TODO: refactoring
 	self.addDish = function (object) {
-		var b = object;			
-		object.amount(object.amount() + 1);
-		if (self.order.indexOf(b) >= 0)
-			self.order.splice(self.order.indexOf(b), 1, object);
-		else
-			self.order.push(object);
+		for (var i in self.order())
+			if (self.order()[i].name == object.name) {
+				self.order()[i].count(self.order()[i].count() + 1);
+				return;
+			}
+
+		self.order.push(new orderItem(object.name, object.price, 1));
 	};
+
+	//TODO: refactoring
+	self.removeDish = function (object) {
+		for (var i in self.order())
+			if (self.order()[i].name == object.name) {
+				if (self.order()[i].count() > 1) {
+					self.order()[i].count(self.order()[i].count() - 1);
+					return;
+				}
+				else {
+					self.order.splice(i, 1);
+					return;
+				}
+
+			}
+	}
+
+	self.checkout = function () {
+		$('body').block("Wait, please...", 3000);
+		self.order.removeAll();
+	}
 }
-ko.applyBindings(new mainViewModel());
+
+ko.applyBindings(new mainViewModel(dishesModel.data));

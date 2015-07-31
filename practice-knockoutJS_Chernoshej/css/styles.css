@@ -3,7 +3,7 @@ body {
 	background-attachment: fixed;
 	background-position: center;
 	font-family: sans-serif;
-	color: wheat;
+	color: rgb(245, 222, 179);;
 }
 
 .content {
@@ -32,6 +32,10 @@ table {
 caption {
 	font-size: 48px;
 	border-bottom-style: dotted;
+}
+
+.selected {
+	background: rgb(0, 150, 0);	
 }
 
 .button {	
