@@ -3,9 +3,9 @@ function convertData(rawData, callback) {
 		return rawData;
 	else
 		return callback.call(this, rawData);
-}
+};
 
-function orderItem(name, price) {
+function orderedItem(name, price) {
 	var self = this;
 	self.name = name;
 	self.price = price;
@@ -13,7 +13,7 @@ function orderItem(name, price) {
 	self.changeCount = function (value) {
 		self.count(self.count() + value);
 	}
-}
+};
 
 function mainViewModel(modelData) {
 
@@ -38,7 +38,7 @@ function mainViewModel(modelData) {
 				return;
 			}
 
-		self.order.push(new orderItem(object.name, object.price));
+		self.order.push(new orderedItem(object.name, object.price));
 	};
 
 	self.removeDish = function (object) {
@@ -49,7 +49,7 @@ function mainViewModel(modelData) {
 	}
 
 	self.checkout = function () {
-		$('body').block("Wait, please...", 3000);
+		$("body").block("Wait, please...", 3000);
 		self.order.removeAll();
 	}
 }
