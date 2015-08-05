@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body ng-app="appModule">
+		<div ng-controller="stockController as vm">
+			<table>
+				<tr ng-repeat="product in vm.products">					
+					<td>
+						<h3 ng-bind="product.name"></h3>
+						<ul ng-repeat="kind in product.kinds">
+							<li ng-bind="kind.name"></li>
+							<li ng-bind="kind.amount"></li>
+							<li ng-bind="kind.minAmount"></li>
+						</ul>						
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+	<script src="../assets/libs/angular.min.js"></script>
+	<script src="../appModule.js"></script>
+	<script src="../Models/stockModel.js"></script>
+	<script src="../services/stockService.js"></script>
+	<script src="../Controllers/stockController.js"></script>
+
+</html>
