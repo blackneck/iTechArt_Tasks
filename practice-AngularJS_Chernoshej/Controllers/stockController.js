@@ -6,8 +6,22 @@
 
 		vm.products = stockService.getProducts();
 
-		vm.addProduct = function (name, amount, minAmount) {
-			stockService.add(name, amount, minAmount);
+		vm.addProduct = function (family, kind, amount, minAmount) {
+			// stockService.add(family, name, amount, minAmount);
+			stockService.add("meat", "name", 10, "minAmount");
+		}
+
+		vm.refill = function (kind, amount) {
+			stockService.refill(kind, amount);
+			// stockService.refill("tomato", 4);
+		}
+
+		vm.removeProduct = function (family, kindName) {
+			stockService.remove(family, kindName);
+		}
+		
+		vm.grabProduct = function (kindName, portions) {
+			stockService.grabIngredient(kindName, portions);
 		}
 	};
 

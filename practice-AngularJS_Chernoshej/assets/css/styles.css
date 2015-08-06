@@ -1,0 +1,50 @@
+body {	
+	background-attachment: fixed;
+	background-position: center;
+	font-family: sans-serif;
+	color: rgb(245, 222, 179);;
+}
+
+table {
+	width: 50%;
+}
+
+caption {
+	font-size: 48px;
+	color: rgb(255,215,0);
+	border-bottom-style: dotted;
+}
+
+td {
+	font-size: 24px;
+	padding-right: 25px;
+}
+
+.button {	
+	-webkit-user-select: none;
+	font-size: 36px;
+	font-family: "FontAwesome";
+	text-align: right;
+}
+
+.dollar {
+	color: rgb(255, 215, 0);	
+}
+
+.remove {
+	color: rgb(190, 0, 0);
+}
+
+.add {
+	color: rgb(0, 190, 0);
+}
+
+.button:hover {
+	cursor: pointer;
+	opacity: 0.4;
+}
+
+.button:active {
+	opacity: 0.1;
+}
+
