@@ -6,6 +6,13 @@
 	</head>
 	<body ng-app="appModule">
 		<div ng-controller="stockController as vm">
+			<div class="popup">
+				<input ng-model="vm.newProductFamily" placeholder="family" type="text">
+				<input ng-model="vm.newProductKind" placeholder="kind" type="text">
+				<input ng-model="vm.newProductAmount" placeholder="amount" type="number" min="0">
+				<input ng-model="vm.newProductMinAmount" placeholder="minimal amount" type="number" min="0">
+				<span class="button add" ng-click="vm.addProduct()">&#xf067;</span>
+			</div>
 			<table>
 				<tr ng-repeat="product in vm.products">
 					<td>
@@ -15,10 +22,10 @@
 								<td ng-bind="kind.name"></td>
 								<td ng-bind="kind.amount"></td>
 								<td>
-									<span class="button dollar" ng-click="vm.refill(kind.name, 4)">&#xf155;</span>
+									<span class="button dollar" ng-click="vm.refill(product.family, kind.name, 4)">&#xf155;</span>
 								</td>
 								<td>
-									<span class="button add" ng-click="vm.grabProduct(kind.name, 1)">&#xf055;</span>
+									<span class="button add" ng-click="vm.grabProduct(product.family, kind.name, 1)">&#xf055;</span>
 								</td>
 								<td>
 									<span class="button remove" ng-click="vm.removeProduct(product.family, kind.name)">&#xf056;</span>
@@ -28,13 +35,34 @@
 					</td>
 				</tr>
 			</table>
-			<span class="button add" ng-click="vm.addProduct()">&#xf067;</span>
+		</div>
+		<div ng-controller="vendorsController as vm">
+			<table>
+				<tr ng-repeat="vendor in vm.vendorsByProduct">
+					<table>
+						<caption ng-bind="vendor.name"></caption>
+						<!--<caption>{{vendor.name}} (quickness: {{vendor.quickness}})</caption>-->
+						<tr ng-repeat="product in vendor.products">
+							<td ng-bind="product.name"></td>
+							<td ng-bind="product.price"></td>
+						</tr>
+					</table>
+				</tr>
+			</table>
+			<div class="clear-fix"></div>
 		</div>
 	</body>
+	<script src="../assets/libs/jquery-1.11.3.min.js"></script>
+	<script src="../assets/libs/utils.js"></script>
 	<script src="../assets/libs/angular.min.js"></script>
+	<script src="../assets/libs/bpopup.js"></script>
 	<script src="../appModule.js"></script>
 	<script src="../Models/stockModel.js"></script>
+	<script src="../Models/vendorsModel.js"></script>
 	<script src="../services/stockService.js"></script>
-	<script src="../Controllers/stockController.js"></script>
+	<script src="../services/vendorsService.js"></script>
+	<script src="../services/orderService.js"></script>
+	<script src="../Controllers/vendors-controller.js"></script>
+	<script src="../Controllers/stock-controller.js"></script>
 
 </html>
