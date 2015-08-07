@@ -1,54 +1,62 @@
 (function () {
 	"use strict"
 
-	function convertData(rawData, callback) {
-		if (typeof callback === "undefined")
-			return rawData;
-		else
-			return callback.call(this, rawData);
-	}
-
 	function StockItem(family, name, amount, minAmount) {
 		this.family = family;
 		this.kinds = [{ name, amount, minAmount }];
 	}
 
+	function lackOfProduct(product) {
+			alert("Lack of " + product);
+		}
+
 	function StockService(data) {
 
-		var content = convertData(data);
+		var content = utils.convertData(data);		
 
-		function getKindByName(kindName) {
+		function getProduct(family) {
 			for (var i in content)
-				for (var j in content[i].kinds) {
-					if (content[i].kinds[j].name === kindName)
-						return content[i].kinds[j];
-				}
+				if (content[i].family === family)
+					return content[i];
+		}
+
+		function getKind(familyName, kindName) {
+			var product = getProduct(familyName);
+			for (var j in product.kinds)
+				if (product.kinds[j].name === kindName)
+					return product.kinds[j];
 		}
 
 		this.getProducts = function () {
 			return content;
 		}
 
-		this.add = function (family, name, amount, minAmount) {
-			for (var i in content)
-				if (content[i].family === family) {
-					content[i].kinds.push({ name, amount, minAmount })
-					return;
-				}
-			content.push(new StockItem(family, name, amount, minAmount));
+		this.add = function (familyName, name, amount, minAmount) {
+			var product = getProduct(familyName)
+			if (product)
+				return product.kinds.push({ name, amount, minAmount });
+			content.push(new StockItem(product, name, amount, minAmount));
 		}
 
-		this.refill = function (kind, portions) {
-			getKindByName(kind).amount += portions;
+		this.refill = function (familyName, kindName, portions) {
+			getKind(familyName, kindName).amount += portions;
 		}
 
-		this.remove = function (family, name) {
-
+		this.remove = function (familyName, kindName) {
+			var product = getProduct(familyName),
+				kind = getKind(product.family, kindName);
+			if (product.kinds.length > 1)
+				product.kinds.splice(product.kinds.indexOf(kind), 1);
+			else
+				content.splice(content.indexOf(product), 1);
 		}
 
-		this.grabIngredient = function (name, portions) {
-			if (getKindByName(name).amount > 0)
-				getKindByName(name).amount -= portions;
+		this.grabIngredient = function (familyName, kindName, portions) {
+			var kind = getKind(familyName, kindName);
+			if (kind.amount >= portions)
+				getKind(familyName, kindName).amount -= portions;
+			if (kind.amount <= kind.minAmount)
+				lackOfProduct(kind.name);								
 		}
 	};
 
