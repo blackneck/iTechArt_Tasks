@@ -1,16 +1,24 @@
 (function () {
 	"use strict"
 
-	function VendorsController(vendorsService, orderService) {
-		var vm = this;
+	function VendorsController($scope, vendorsService, orderService) {
 
-		vm.vendors = vendorsService.getVendors();
-		
-		vm.vendorsByProduct = vendorsService.getVendorsByProduct(orderService.order.name);		
+		$scope.vendors = vendorsService.getVendors();
+		$scope.order = orderService.get();
+
+
+		$scope.$watch(
+			function ($scope) {
+				return $scope.order.product;
+			},
+
+			function (value) {
+				$scope.availableVendors = vendorsService.
+					getAvailableVendors(value);
+			});
+
 	};
 
-
-
 	var app = angular.module("appModule");
-	app.controller("vendorsController", ["vendorsService", "orderService", VendorsController])
-})()
+	app.controller("vendorsController", ["$scope", "vendorsService", "orderService", VendorsController])
+})();

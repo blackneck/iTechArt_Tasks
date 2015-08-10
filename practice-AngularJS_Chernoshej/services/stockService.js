@@ -14,6 +14,10 @@
 
 		var content = utils.convertData(data);		
 
+		this.getProducts = function () {
+			return content;
+		}
+
 		function getProduct(family) {
 			for (var i in content)
 				if (content[i].family === family)
@@ -25,11 +29,7 @@
 			for (var j in product.kinds)
 				if (product.kinds[j].name === kindName)
 					return product.kinds[j];
-		}
-
-		this.getProducts = function () {
-			return content;
-		}
+		}		
 
 		this.add = function (familyName, name, amount, minAmount) {
 			var product = getProduct(familyName)

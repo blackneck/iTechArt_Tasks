@@ -2,7 +2,20 @@
 	"use strict"
 
 	function OrderService() {
-		this.order = { product: "", amount: "" };
+		var order = { product: "", amount: "" };
+
+		this.get = function () {
+			return order;
+		}
+
+		this.set = function (product, amount) {
+			order.product = product;
+			order.amount = amount;
+		}
+
+		this.showOrderVendors = function () {
+			$(".available-vendors").bPopup();
+		}
 	}
 
 

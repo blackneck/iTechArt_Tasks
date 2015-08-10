@@ -6,19 +6,24 @@ body {
 }
 
 table {
-	width: 50%;
-	float: left;	
+	width: 50%;		
+	float: left;
 }
 
 caption {
 	font-size: 48px;
 	color: rgb(255,215,0);
-	border-bottom-style: dotted;
+}
+
+.available-vendors {
+	display: none;
 }
 
 td {
 	font-size: 24px;
-	padding-right: 25px;
+	padding-right: 25px;	
+	text-align: center;
+	border-top-style: dotted;	
 }
 
 .button {	
@@ -47,12 +52,4 @@ td {
 
 .button:active {
 	opacity: 0.1;
-}
-
-.popup {
-
-}
-
-.clear-fix {
-	clear: both;
 }
