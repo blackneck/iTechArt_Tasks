@@ -1,36 +1,34 @@
 (function () {
 	"use strict"
 
-	function StockController(stockService, orderService) {
-		var vm = this;
+	function StockController($scope, stockService, orderService) {		
 
-		vm.newProductFamily = null;
-		vm.newProductKind = null;
-		vm.newProductAmount = 0;
-		vm.newProductMinAmount = 0;
+		$scope.newProductFamily = null;
+		$scope.newProductKind = null;
+		$scope.newProductAmount = 0;
+		$scope.newProductMinAmount = 0;
 
-		vm.addProduct = function () {
-			stockService.add(vm.newProductFamily, vm.newProductKind,
-				vm.newProductAmount, vm.newProductMinAmount);
+		$scope.addProduct = function () {
+			stockService.add($scope.newProductFamily, $scope.newProductKind,
+				$scope.newProductAmount, $scope.newProductMinAmount);
 		}
 
-		vm.products = stockService.getProducts();
+		$scope.products = stockService.getProducts();
 
-		vm.refill = function (family, kind, amount) {
-			orderService.order.product = kind;
-			orderService.order.amount = amount;
-			// stockService.refill(family, kind, amount);
+		$scope.refill = function (family, kind, amount) {
+			orderService.set(kind, amount);
+			orderService.showOrderVendors();
 		}
 
-		vm.removeProduct = function (family, kindName) {
+		$scope.removeProduct = function (family, kindName) {
 			stockService.remove(family, kindName);
 		}
 
-		vm.grabProduct = function (family, kindName, portions) {
+		$scope.grabProduct = function (family, kindName, portions) {
 			stockService.grabIngredient(family, kindName, portions);
 		}
 	};
 
 	var app = angular.module("appModule");
-	app.controller("stockController", ["stockService", "orderService", StockController])
+	app.controller("stockController", ["$scope", "stockService", "orderService", StockController])
 })();

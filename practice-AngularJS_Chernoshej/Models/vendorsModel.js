@@ -7,7 +7,7 @@ var vendorsModel = (function () {
             	{ name: "tomato", price: 10 },
 				{ name: "cheder", price: 30 },
 				{ name: "smoked", price: 15 },
-				{ name: "hot", pricet: 20 }], quickness: 1},
+				{ name: "hot", price: 20 }], quickness: 1},
 			{name: "Boris", products: [
 				{ name: "smoked", price: 15 },
             	{ name: "bacon", price: 100 },
@@ -19,7 +19,7 @@ var vendorsModel = (function () {
 				{ name: "ham", price: 75 },
 				{ name: "black olives", price: 15 },
 				{ name: "olives", price: 15 },
-				{ name: "cucmber", price: 3 }], quickness: 1},
+				{ name: "cucumber", price: 3 }], quickness: 1},
 			{name: "Gregory", products: [  
 				{ name: "ham", price: 75 },   
 				{ name: "olives", price: 15 },   					

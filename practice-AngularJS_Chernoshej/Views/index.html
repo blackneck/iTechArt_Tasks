@@ -5,16 +5,16 @@
 		<link href="../assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body ng-app="appModule">
-		<div ng-controller="stockController as vm">
+		<div ng-controller="stockController">
 			<div class="popup">
-				<input ng-model="vm.newProductFamily" placeholder="family" type="text">
-				<input ng-model="vm.newProductKind" placeholder="kind" type="text">
-				<input ng-model="vm.newProductAmount" placeholder="amount" type="number" min="0">
-				<input ng-model="vm.newProductMinAmount" placeholder="minimal amount" type="number" min="0">
-				<span class="button add" ng-click="vm.addProduct()">&#xf067;</span>
+				<input ng-model="newProductFamily" placeholder="family" type="text">
+				<input ng-model="newProductKind" placeholder="kind" type="text">
+				<input ng-model="newProductAmount" placeholder="amount" type="number" min="0">
+				<input ng-model="newProductMinAmount" placeholder="minimal amount" type="number" min="0">
+				<span class="button add" ng-click="addProduct()">&#xf067;</span>
 			</div>
 			<table>
-				<tr ng-repeat="product in vm.products">
+				<tr ng-repeat="product in products">
 					<td>
 						<table>
 							<caption ng-bind="product.family"></caption>
@@ -22,13 +22,10 @@
 								<td ng-bind="kind.name"></td>
 								<td ng-bind="kind.amount"></td>
 								<td>
-									<span class="button dollar" ng-click="vm.refill(product.family, kind.name, 4)">&#xf155;</span>
+									<span class="button dollar" ng-click="refill(product.family, kind.name, 4)">&#xf155;</span>
 								</td>
 								<td>
-									<span class="button add" ng-click="vm.grabProduct(product.family, kind.name, 1)">&#xf055;</span>
-								</td>
-								<td>
-									<span class="button remove" ng-click="vm.removeProduct(product.family, kind.name)">&#xf056;</span>
+									<span class="button remove" ng-click="removeProduct(product.family, kind.name)">&#xf00d;</span>
 								</td>
 							</tr>
 						</table>
@@ -36,20 +33,43 @@
 				</tr>
 			</table>
 		</div>
-		<div ng-controller="vendorsController as vm">
+		<div ng-controller="vendorsController">
 			<table>
-				<tr ng-repeat="vendor in vm.vendorsByProduct">
-					<table>
-						<caption ng-bind="vendor.name"></caption>
-						<!--<caption>{{vendor.name}} (quickness: {{vendor.quickness}})</caption>-->
-						<tr ng-repeat="product in vendor.products">
-							<td ng-bind="product.name"></td>
-							<td ng-bind="product.price"></td>
-						</tr>
-					</table>
+				<tr ng-repeat="vendor in vendors">
+					<td>
+						<table>
+							<caption ng-bind="vendor.name"></caption>
+							<tr ng-repeat="product in vendor.products">
+								<td ng-bind="product.name"></td>
+								<td ng-bind="product.price"></td>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<span class="button remove" ng-click="removeProduct(product.family, kind.name)">&#xf00d;</span>
+					</td>
 				</tr>
 			</table>
-			<div class="clear-fix"></div>
+			<table class="available-vendors">
+				<caption ng-bind="order.product"></caption>
+				<thead>
+					<tr>
+						<th>Vendor</th>
+						<th>Price</th>
+						<th>quickness</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="vendor in availableVendors">
+						<td ng-bind="vendor.name"></td>
+						<td ng-bind="vendor.price"></td>
+						<td ng-bind="vendor.quickness"></td>
+						<td>
+							<span class="button add" ng-click="grabProduct(product.family, kind.name, 1)">&#xf055;</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</body>
 	<script src="../assets/libs/jquery-1.11.3.min.js"></script>
