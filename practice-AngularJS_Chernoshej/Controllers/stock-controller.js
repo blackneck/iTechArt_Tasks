@@ -1,32 +1,27 @@
 (function () {
 	"use strict"
 
-	function StockController($scope, stockService, orderService) {		
+	function StockController($scope, stockService, orderService) {
 
 		$scope.newProductFamily = null;
 		$scope.newProductKind = null;
-		$scope.newProductAmount = 0;
-		$scope.newProductMinAmount = 0;
+		$scope.newProductMinAmount;
 
 		$scope.addProduct = function () {
-			stockService.add($scope.newProductFamily, $scope.newProductKind,
-				$scope.newProductAmount, $scope.newProductMinAmount);
+			stockService.add($scope.newProductFamily, $scope.newProductKind, 0,
+				$scope.newProductMinAmount);
 		}
 
 		$scope.products = stockService.getProducts();
 
-		$scope.refill = function (family, kind, amount) {
-			orderService.set(kind, amount);
+		$scope.refill = function (family, kind) {
+			orderService.set(family, kind);
 			orderService.showOrderVendors();
 		}
 
 		$scope.removeProduct = function (family, kindName) {
 			stockService.remove(family, kindName);
-		}
-
-		$scope.grabProduct = function (family, kindName, portions) {
-			stockService.grabIngredient(family, kindName, portions);
-		}
+		}	
 	};
 
 	var app = angular.module("appModule");

@@ -7,6 +7,17 @@
 		this.quickness = quickness;
 	}
 
+	function Vendor(name, products, quickness) {
+		this.name = name;
+		this.products = products;
+		this.quickness = quickness;
+	}
+
+	function Product(name, price) {
+		this.name = name;
+		this.price = price;
+	}
+
 	function VendorsService(data) {
 
 		var content = utils.convertData(data);
@@ -24,6 +35,24 @@
 							content[i].products[j].price,
 							content[i].quickness));
 			return result;
+		}
+
+		this.removeVendor = function (name) {
+			for (var i in content)
+				if (name == content[i].name) {
+					content.splice(i, 1);
+					return;
+				}
+		}
+
+		this.addVendor = function (name, product, quickness, productPrice) {
+			for (var i in content)
+				if (name == content[i].name) {
+					content[i].products.push(new Product(product, productPrice));
+					return;
+				}
+
+			content.push(new Vendor(name, [new Product(product, productPrice)], quickness));
 		}
 	};
 

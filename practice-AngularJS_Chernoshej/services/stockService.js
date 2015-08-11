@@ -7,12 +7,12 @@
 	}
 
 	function lackOfProduct(product) {
-			alert("Lack of " + product);
-		}
+		alert("Lack of " + product);
+	}
 
 	function StockService(data) {
 
-		var content = utils.convertData(data);		
+		var content = utils.convertData(data);
 
 		this.getProducts = function () {
 			return content;
@@ -29,17 +29,19 @@
 			for (var j in product.kinds)
 				if (product.kinds[j].name === kindName)
 					return product.kinds[j];
-		}		
+		}
 
 		this.add = function (familyName, name, amount, minAmount) {
 			var product = getProduct(familyName)
 			if (product)
 				return product.kinds.push({ name, amount, minAmount });
-			content.push(new StockItem(product, name, amount, minAmount));
+			content.push(new StockItem(familyName, name, amount, minAmount));
 		}
 
-		this.refill = function (familyName, kindName, portions) {
-			getKind(familyName, kindName).amount += portions;
+		this.refill = function (orderList) {
+			for (var i in orderList)
+				getKind(orderList[i].family,
+					orderList[i].name).amount += orderList[i].amount;
 		}
 
 		this.remove = function (familyName, kindName) {
@@ -56,7 +58,7 @@
 			if (kind.amount >= portions)
 				getKind(familyName, kindName).amount -= portions;
 			if (kind.amount <= kind.minAmount)
-				lackOfProduct(kind.name);								
+				lackOfProduct(kind.name);
 		}
 	};
 
