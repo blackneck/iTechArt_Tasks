@@ -13,7 +13,8 @@
 	function OrderService() {
 
 		var order = { family: "", product: "" },
-			orderList = [];
+			orderList = [],
+			ordersStory = [];
 
 		this.get = function () {
 			return order;
@@ -33,6 +34,10 @@
 
 		this.getOrderList = function () {
 			return orderList;
+		}
+
+		this.getOrdersStory = function () {
+			return ordersStory;
 		}
 
 		this.pickProduct = function (name, family, vendor, price) {
@@ -62,6 +67,8 @@
 			var date = new Date();
 			for (var i in orderList)
 				orderList[i].date = date;
+			ordersStory = ordersStory.concat(orderList);
+			orderList = [];
 		}
 
 		this.showOrderVendors = function () {
