@@ -93,7 +93,7 @@
 								<td ng-bind="orderItem.vendor"></td>
 								<td ng-bind="orderItem.amount"></td>
 								<td ng-bind="orderItem.price"></td>
-								<td ng-bind="orderItem.date"></td>													
+								<td ng-bind="orderItem.date | date: 'yyyy-MM-dd H:m:s' "></td>													
 							</tr>
 						</table>
 					</div>
