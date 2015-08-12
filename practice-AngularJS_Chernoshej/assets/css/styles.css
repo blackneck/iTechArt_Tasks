@@ -2,11 +2,9 @@ body {
 	background-attachment: fixed;
 	background-position: center;
 	font-family: sans-serif;
-	color: rgb(245, 222, 179);;
-}
-
-.wrapper {
-	background: url("../img/meat-sousage.png");
+	color: rgb(245, 222, 179);	
+	background: url("../img/background.jpg");
+	background-attachment: fixed;	
 }
 
 section {
@@ -14,10 +12,11 @@ section {
 	float: left;
 	border-style: solid;
 	margin-left: 30px;			
+	background: rgba(0, 0, 0, 0.4);
 }
 
 table {
-	width: 100%;			
+	width: 100%;				
 }
 
 caption {
@@ -33,7 +32,7 @@ td {
 	font-size: 24px;
 	padding-right: 25px;	
 	text-align: center;
-	border-top-style: solid;	
+	border-top-style: solid;		
 }
 
 .button {	
@@ -55,6 +54,33 @@ td {
 	color: rgb(0, 190, 0);
 }
 
+.story {
+	margin-left: 50%;	
+	font-size: 54px;
+	color: rgb(255, 215, 0);	
+}
+
+.chart {
+	margin-left: 50%;	
+	font-size: 54px;
+	color: rgb(255, 215, 0);	
+}
+
+
+.chart-popup {
+	display: none;
+}
+
+.success-popup {
+	color: rgb(0, 190, 0);
+	display: none;
+}
+
+.error-popup {
+	color: rgb(190, 0, 0);
+	display: none;
+}
+
 .button:hover {
 	cursor: pointer;
 	opacity: 0.4;
@@ -64,6 +90,9 @@ td {
 	opacity: 0.1;
 }
 
+.story-popup {
+	display: none;
+}
 
 .checkout span {	
 	font-size: 86px;

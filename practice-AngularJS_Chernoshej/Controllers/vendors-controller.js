@@ -3,10 +3,12 @@
 
 	function VendorsController($scope, vendorsService) {
 
-		$scope.newVendorName;
-		$scope.newVendorQuickness;
-		$scope.newVendorProduct;
-		$scope.newVendorProductPrice;
+		var reset = function () {
+			$scope.newVendorName = null;
+			$scope.newVendorQuickness = null;
+			$scope.newVendorProduct = null;
+			$scope.newVendorProductPrice = null;
+		}
 
 		$scope.vendors = vendorsService.getVendors();
 
@@ -17,6 +19,7 @@
 		$scope.addVendor = function () {
 			vendorsService.addVendor($scope.newVendorName, $scope.newVendorProduct,
 				$scope.newVendorQuickness, $scope.newVendorProductPrice);
+			reset();
 		}
 	};
 

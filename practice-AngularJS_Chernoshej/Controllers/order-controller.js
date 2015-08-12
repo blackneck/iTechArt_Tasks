@@ -6,6 +6,9 @@
 		$scope.order = orderService.get();
 		$scope.orderList = orderService.getOrderList();
 
+
+
+
 		$scope.$watch(
 			function ($scope) {
 				return orderService.getSum();
@@ -29,15 +32,41 @@
 			orderService.pickProduct(name, family, vendor, price);
 		}
 
+		$scope.showStory = function () {
+			$(".story-popup").bPopup();
+		}
+		
+		$scope.showChart = function () {
+			$(".chart-popup").bPopup();
+		}
+		
 		$scope.removeProduct = function (name, vendor) {
 			orderService.removeProduct(name, vendor);
 		}
+
+		$scope.confirmSuccess = function () {
+			orderService.confirmOrder();
+			stockService.refill($scope.orderList);
+			$scope.orderList = orderService.getOrderList();
+			$scope.ordersStory = orderService.getOrdersStory();
+			$(".success-popup").bPopup();
+		}
+
+		$scope.confirmError = function () {
+			$(".error-popup").bPopup();
+		}
 		
 		///request here
-		$scope.confirmOrder = function () {
-			$(".wrapper").block(orderService.confirmOrder);			
-			// orderService.confirmOrder();
-			stockService.refill($scope.orderList);
+		$scope.confirmOrder = function (success, error) {
+
+			if ($(".wrapper").block(
+				function () {
+					return (Math.random() * 10) > 5;
+				}))
+				success();
+
+			else
+				error();
 		}
 	};
 

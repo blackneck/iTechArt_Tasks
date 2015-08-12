@@ -12,7 +12,7 @@
             $('body').append(block);
 			self.hide();
             $('.additional-block')
-                .append("<img src='../../images/loader.gif'/>")
+                .append("<img src='../assets/img/loader.gif'/>")
                 .append("<p>" + params.text + "</p>");
             setTimeout(function () {
 				self.show();
@@ -20,5 +20,7 @@
                 $('.additional-block').remove();
             }, params.delay);
         });
+        
+        return callback();
     }
 })(jQuery);

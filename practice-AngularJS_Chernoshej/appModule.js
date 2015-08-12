@@ -3,5 +3,5 @@
 (function () {
 	"use strict"
 	
-	angular.module("appModule", []);
+	angular.module("appModule", ["chart.js"]);
 })();
