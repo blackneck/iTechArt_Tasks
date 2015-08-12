@@ -4,9 +4,10 @@
 		<link href="../assets/css/styles.css" rel="stylesheet" type="text/css">
 		<link href="../assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/css/blocker-styles.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/css/angular-chart.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body ng-app="appModule">
-		<div class="wrapper">
+		<div class="wrapper">			
 			<section ng-controller="stockController">
 				<form ng-submit="addProduct()">
 					<input ng-model="newProductFamily" placeholder="family" type="text">
@@ -93,12 +94,12 @@
 								<td ng-bind="orderItem.vendor"></td>
 								<td ng-bind="orderItem.amount"></td>
 								<td ng-bind="orderItem.price"></td>
-								<td ng-bind="orderItem.date | date: 'yyyy-MM-dd H:m:s' "></td>													
+								<td ng-bind="orderItem.date | date: 'yyyy-MM-dd H:m:s' "></td>
 							</tr>
 						</table>
 					</div>
 					<span class="button story" ng-click="showStory()">&#xf1da; story</span>
-					<span class="button chart" ng-click="">&#xf080; chart</span>
+					<span class="button chart" ng-click="showChart()">&#xf080; chart</span>
 				</div>
 				<div class="available-vendors">
 					<table>
@@ -162,6 +163,8 @@
 	<script src="../assets/libs/blocker.js"></script>
 	<script src="../assets/libs/angular.min.js"></script>
 	<script src="../assets/libs/bpopup.js"></script>
+	<script src="../assets/libs/Chart.min.js"></script>
+	<script src="../assets/libs/angular-chart.min.js"></script>
 	<script src="../appModule.js"></script>
 	<script src="../Models/stockModel.js"></script>
 	<script src="../Models/vendorsModel.js"></script>
@@ -170,6 +173,7 @@
 	<script src="../services/orderService.js"></script>
 	<script src="../Controllers/order-controller.js"></script>
 	<script src="../Controllers/vendors-controller.js"></script>
+	<script src="../Controllers/chart-controller.js"></script>
 	<script src="../Controllers/stock-controller.js"></script>
 
 </html>

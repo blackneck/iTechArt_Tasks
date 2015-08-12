@@ -6,6 +6,9 @@
 		$scope.order = orderService.get();
 		$scope.orderList = orderService.getOrderList();
 
+
+
+
 		$scope.$watch(
 			function ($scope) {
 				return orderService.getSum();
@@ -32,7 +35,11 @@
 		$scope.showStory = function () {
 			$(".story-popup").bPopup();
 		}
-
+		
+		$scope.showChart = function () {
+			$(".chart-popup").bPopup();
+		}
+		
 		$scope.removeProduct = function (name, vendor) {
 			orderService.removeProduct(name, vendor);
 		}
