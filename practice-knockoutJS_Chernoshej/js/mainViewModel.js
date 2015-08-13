@@ -3,14 +3,17 @@ function convertData(rawData, callback) {
 		return rawData;
 	else
 		return callback.call(this, rawData);
-}
+};
 
-function orderItem(name, price, count) {
+function orderedItem(name, price) {
 	var self = this;
 	self.name = name;
 	self.price = price;
-	self.count = ko.observable(count);
-}
+	self.count = ko.observable(1);
+	self.changeCount = function (value) {
+		self.count(self.count() + value);
+	}
+};
 
 function mainViewModel(modelData) {
 
@@ -22,41 +25,31 @@ function mainViewModel(modelData) {
 
 	self.totalPrice = ko.computed(function () {
 		var res = 0;
-		for (var i in self.order()) {
+		for (var i in self.order())
 			res += self.order()[i].price * self.order()[i].count();
-		}
+
 		return res;
 	});
 
-	//TODO: refactoring
 	self.addDish = function (object) {
 		for (var i in self.order())
 			if (self.order()[i].name == object.name) {
-				self.order()[i].count(self.order()[i].count() + 1);
+				self.order()[i].changeCount(1);
 				return;
 			}
 
-		self.order.push(new orderItem(object.name, object.price, 1));
+		self.order.push(new orderedItem(object.name, object.price));
 	};
 
-	//TODO: refactoring
 	self.removeDish = function (object) {
-		for (var i in self.order())
-			if (self.order()[i].name == object.name) {
-				if (self.order()[i].count() > 1) {
-					self.order()[i].count(self.order()[i].count() - 1);
-					return;
-				}
-				else {
-					self.order.splice(i, 1);
-					return;
-				}
-
-			}
+		if (object.count() > 1)
+			object.changeCount(-1);
+		else
+			self.order.remove(object);
 	}
 
 	self.checkout = function () {
-		$('body').block("Wait, please...", 3000);
+		$("body").block("Wait, please...", 3000);
 		self.order.removeAll();
 	}
 }

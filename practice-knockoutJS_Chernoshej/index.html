@@ -18,7 +18,7 @@
 						</tr>
 					</thead>
 					<tbody data-bind="foreach: menu">
-						<tr class="menu-item">							
+						<tr class="menu-item" data-bind="mark: $root.order">							
 							<td class="dish-name" data-bind="text: name"></td>
 							<td>
 								<img class="dish-photo" data-bind="attr: {src: photo}">
@@ -66,6 +66,7 @@
 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="js/InterfaceBlocker.js"></script>
 	<script type="text/javascript" src="js/knockout.js"></script>
+	<script type="text/javascript" src="js/customBinding_Marker.js"></script>
 	<script type="text/javascript" src="js/mainViewModel.js"></script>
 
 </html>
