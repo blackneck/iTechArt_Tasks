@@ -65,3 +65,5 @@ INSERT INTO Career(JobId, EmployeeId, DepartmentId, StartDate, EndDate)
 VALUES (3, 3, 4, CAST('2014-08-28' as date), NULL);
 INSERT INTO Career(JobId, EmployeeId, DepartmentId, StartDate, EndDate)
 VALUES (4, 4, 3, CAST('2014-08-28' as date), NULL);
+INSERT INTO Career(JobId, EmployeeId, DepartmentId, StartDate, EndDate)
+VALUES (1, 1, 1, CAST('2011-08-28' as date), CAST('2014-08-20' as date));
