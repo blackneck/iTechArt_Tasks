@@ -1,19 +1,26 @@
 (function ($) {
-    $.fn.block = function (text, delay) {
-        $(this).each(function () {
-            var block = "<div class='additional-block'></div>";
-            $(this).append(block);
+    "use strict"
+    
+    $.fn.block = function (callback, params) {
+		var defaultParams = {
+			text: "Wait please ",
+			delay: 3000
+		}
+		var params = $.extend({}, defaultParams, params);
+		
+        this.each(function () {            
+            var block = "<div class='additional-block'></div>";			
+			var self = $(this);
+            $('body').append(block);			
+			self.hide();
             $('.additional-block')
-                .append("<img src='img/loader.gif'/>")
-                .append("<p>" + text + "</p>");
-            setTimeout(function () {                
-                // $('.additional-block').remove();
-                $('.additional-block')
-                    .append("<p>" + "Complete!" + "</p>");
-                setTimeout(function () {
-                    $('.additional-block').remove();
-                }, 1000)
-            }, delay);
-        });
+                .append("<img src='../../images/loader.gif'/>")
+                .append("<p>" + params.text + "</p>");
+            setTimeout(function () {
+				self.show();
+				callback();
+                $('.additional-block').remove();				
+            }, params.delay);                
+        });          
     }
 })(jQuery);

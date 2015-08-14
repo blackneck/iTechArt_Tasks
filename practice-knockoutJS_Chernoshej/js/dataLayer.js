@@ -1,4 +1,5 @@
 var dishesModel = (function () {
+	"use strict"
 	return {
 		data: [
 			{ name: "pizza", price: 180, photo: "img/pizza.png" },
