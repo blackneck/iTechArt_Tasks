@@ -58,10 +58,10 @@ INSERT INTO Salary(EmployeeId, Month, Year, SalaryAmount)
 VALUES (3, 5, 2015, 1100);
 
 INSERT INTO Career(JobId, EmployeeId, DepartmentId, StartDate, EndDate)
-VALUES (1, 1, 1, CAST('2014-08-28' as date), CAST('2015-08-12' as date));
+VALUES (1, 1, 1, CAST('2014-08-28' as date), NULL);
 INSERT INTO Career(JobId, EmployeeId, DepartmentId, StartDate, EndDate)
-VALUES (2, 2, 1, CAST('2014-08-28' as date), CAST('2015-08-12' as date));
+VALUES (2, 2, 1, CAST('2014-08-28' as date), NULL);
 INSERT INTO Career(JobId, EmployeeId, DepartmentId, StartDate, EndDate)
-VALUES (3, 3, 4, CAST('2014-08-28' as date), CAST('2015-08-12' as date));
+VALUES (3, 3, 4, CAST('2014-08-28' as date), NULL);
 INSERT INTO Career(JobId, EmployeeId, DepartmentId, StartDate, EndDate)
-VALUES (4, 4, 3, CAST('2014-08-28' as date), CAST('2015-08-12' as date));
+VALUES (4, 4, 3, CAST('2014-08-28' as date), NULL);
