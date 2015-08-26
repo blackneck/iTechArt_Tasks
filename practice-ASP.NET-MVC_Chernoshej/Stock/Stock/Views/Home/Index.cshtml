@@ -26,6 +26,25 @@
                                 <th>refill</th>
                                 <th>remove</th>
                             </tr>
+                            <tr>
+                                <td ng-bind="product.Name"></td>
+                                <td ng-bind="product.Amount"></td>
+                                <td>
+                                    <span class="button dollar" ng-click="refill(product.family, kind.name)">&#xf155;</span>
+                                </td>
+                                <td>
+                                    <span class="button remove" ng-click="removeProduct(product.family, kind.name)">&#xf00d;</span>
+                                </td>
+                            </tr>
+                        </table>
+                        @*<table>
+                            <caption ng-bind="product.Family"></caption>
+                            <tr>
+                                <th>name</th>
+                                <th>amount</th>
+                                <th>refill</th>
+                                <th>remove</th>
+                            </tr>
                             <tr ng-repeat="kind in product.kinds">
                                 <td ng-bind="kind.name"></td>
                                 <td ng-bind="kind.amount"></td>
@@ -36,7 +55,7 @@
                                     <span class="button remove" ng-click="removeProduct(product.family, kind.name)">&#xf00d;</span>
                                 </td>
                             </tr>
-                        </table>
+                        </table>*@
                     </td>
                 </tr>
             </table>
@@ -53,24 +72,15 @@
                 <caption>
                     <h2>Vendors</h2>
                 </caption>
+                <tr>
+                    <th>Name</th>                    
+                    <th>Quickness</th>
+                </tr>
                 <tr ng-repeat="vendor in vendors">
+                    <td ng-bind="vendor.Name"></td>             
+                    <td ng-bind="vendor.Quickness"></td>                                                                        
                     <td>
-                        <table>
-                            <caption ng-bind="vendor.Name"></caption>
-                            <tr>
-                                <th>Product</th>
-                                <th>Price</th>
-                                <th>Quickness</th>
-                            </tr>
-                            <tr ng-repeat="product in vendor.products">
-                                <td ng-bind="product.name"></td>
-                                <td ng-bind="product.price"></td>
-                                <td ng-bind="vendor.Quickness"></td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td>
-                        <span class="button remove" ng-click="removeVendor(vendor.name)">&#xf00d;</span>
+                        <span class="button remove" ng-click="removeVendor(vendor.ID)">&#xf00d;</span>
                     </td>
                 </tr>
             </table>
@@ -155,12 +165,4 @@
         </section>
     </div>
 </body>
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
-@Scripts.Render("~/bundles/JQuery")
-@Scripts.Render("~/bundles/RestaurantApp")
-@Scripts.Render("~/bundles/RestaurantAppControllers")
-@Scripts.Render("~/bundles/RestaurantAppServices")
-@Scripts.Render("~/bundles/RestaurantAppLibs")
-@Scripts.Render("~/bundles/Bpopup")
-@Scripts.Render("~/bundles/Blocker")
 </html>

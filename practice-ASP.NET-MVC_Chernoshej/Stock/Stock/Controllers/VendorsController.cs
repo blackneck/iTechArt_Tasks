@@ -1,7 +1,10 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using Stock.DAL;
 using Stock.Models;
@@ -15,8 +18,7 @@ namespace Stock.Controllers
         // GET: Vendors
         public ActionResult Index()
         {
-            //return View(db.Vendors.ToList());
-            return Json(db.Vendors.ToList(), JsonRequestBehavior.AllowGet);
+            return View(db.Vendors.ToList());
         }
 
         // GET: Vendors/Details/5
@@ -81,7 +83,7 @@ namespace Stock.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(vendor).State = System.Data.Entity.EntityState.Modified;
+                db.Entry(vendor).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

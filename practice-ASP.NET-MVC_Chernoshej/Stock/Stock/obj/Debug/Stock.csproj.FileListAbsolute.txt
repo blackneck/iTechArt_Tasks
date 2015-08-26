@@ -66,4 +66,5 @@ D:\workspace\projects\Tasks\practice-ASP.NET-MVC_Chernoshej\Stock\Stock\bin\Micr
 D:\workspace\projects\Tasks\practice-ASP.NET-MVC_Chernoshej\Stock\Stock\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\workspace\projects\Tasks\practice-ASP.NET-MVC_Chernoshej\Stock\Stock\obj\Debug\Stock.dll
 D:\workspace\projects\Tasks\practice-ASP.NET-MVC_Chernoshej\Stock\Stock\obj\Debug\Stock.pdb
+D:\workspace\projects\Tasks\practice-ASP.NET-MVC_Chernoshej\Stock\Stock\bin\Scripts\Services\vendorsService.js
 D:\workspace\projects\Tasks\practice-ASP.NET-MVC_Chernoshej\Stock\Stock\obj\Debug\Stock.csprojResolveAssemblyReference.cache

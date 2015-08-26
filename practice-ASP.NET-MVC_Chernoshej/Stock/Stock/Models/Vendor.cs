@@ -10,11 +10,11 @@ namespace Stock.Models
             //this.Ingredients = new HashSet<Ingredient>();
         }
 
-        [Key]
+        //[Key]
         public int ID { get; set; }
         public string Name { get; set; }
         public int Quickness { get; set; }
 
-        public virtual ICollection<Ingredient> Ingredients { get; set; }
+        //public virtual ICollection<Ingredient> Ingredients { get; set; }
     }
 }

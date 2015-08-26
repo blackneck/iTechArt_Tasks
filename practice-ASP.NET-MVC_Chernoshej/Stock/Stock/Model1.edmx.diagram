@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="efb721ba5965432697133465ff77c4d4" Name="Diagram1" ZoomLevel="61">
+        <EntityTypeShape EntityType="Model.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetRole" Width="1.5" PointX="10.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetUserClaim" Width="1.5" PointX="15.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetUserLogin" Width="1.5" PointX="15.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetUser" Width="1.5" PointX="13" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Ingredient" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Order" Width="1.5" PointX="8" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OrderToCook" Width="1.5" PointX="10.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PizzaIngredient" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Pizza" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PizzaToOrder" Width="1.5" PointX="10.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ServiceUser" Width="1.5" PointX="5.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Shift" Width="1.5" PointX="8" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.StockIngredient" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.VendorIngredient" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.VendorIngredientToOrder" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.VendorOrder" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Vendor" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_PizzaIngredients_dbo_Ingredients_IngredientId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_StockIngredients_dbo_Ingredients_IngredientId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_VendorIngredients_dbo_Ingredients_IngredientId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_VendorIngredientToOrders_dbo_Ingredients_IngredientId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Orders_dbo_ServiceUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_OrderToCooks_dbo_Orders_OrderId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_PizzaToOrders_dbo_Orders_OrderId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_OrderToCooks_dbo_Shifts_ShiftId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_PizzaIngredients_dbo_Pizzas_PizzaId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_PizzaToOrders_dbo_Pizzas_PizzaId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_VendorIngredients_dbo_Vendors_VendorId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_VendorIngredientToOrders_dbo_VendorIngredients_IngredientId_VendorId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_VendorIngredientToOrders_dbo_VendorOrders_VendorOrderId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_VendorIngredientToOrders_dbo_Vendors_VendorId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

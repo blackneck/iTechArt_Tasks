@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+    <Property Name="User_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="Discriminator" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ingredients">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Weight" Type="int" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar(max)" />
+    <Property Name="Family" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="IsConfirmed" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderToCooks">
+    <Key>
+      <PropertyRef Name="ShiftId" />
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="ShiftId" Type="int" Nullable="false" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="IsCompleted" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PizzaIngredients">
+    <Key>
+      <PropertyRef Name="PizzaId" />
+      <PropertyRef Name="IngredientId" />
+    </Key>
+    <Property Name="PizzaId" Type="int" Nullable="false" />
+    <Property Name="IngredientId" Type="int" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pizzas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar(max)" />
+    <Property Name="Diameter" Type="int" Nullable="false" />
+    <Property Name="Weight" Type="int" Nullable="false" />
+    <Property Name="IsCustom" Type="bit" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PizzaToOrders">
+    <Key>
+      <PropertyRef Name="PizzaId" />
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="PizzaId" Type="int" Nullable="false" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ServiceUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Shifts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="StockIngredients">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IngredientId" Type="int" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VendorIngredients">
+    <Key>
+      <PropertyRef Name="IngredientId" />
+      <PropertyRef Name="VendorId" />
+    </Key>
+    <Property Name="IngredientId" Type="int" Nullable="false" />
+    <Property Name="VendorId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VendorIngredientToOrders">
+    <Key>
+      <PropertyRef Name="IngredientId" />
+      <PropertyRef Name="VendorId" />
+      <PropertyRef Name="VendorOrderId" />
+    </Key>
+    <Property Name="IngredientId" Type="int" Nullable="false" />
+    <Property Name="VendorId" Type="int" Nullable="false" />
+    <Property Name="VendorOrderId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VendorOrders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+    <Property Name="VendorIngredientId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vendors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Quickness" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Orders_dbo_ServiceUsers_UserId">
+    <End Role="ServiceUsers" Type="Self.ServiceUsers" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_OrderToCooks_dbo_Orders_OrderId">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+    <End Role="OrderToCooks" Type="Self.OrderToCooks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderToCooks">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_OrderToCooks_dbo_Shifts_ShiftId">
+    <End Role="Shifts" Type="Self.Shifts" Multiplicity="1" />
+    <End Role="OrderToCooks" Type="Self.OrderToCooks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shifts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderToCooks">
+        <PropertyRef Name="ShiftId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PizzaIngredients_dbo_Ingredients_IngredientId">
+    <End Role="Ingredients" Type="Self.Ingredients" Multiplicity="1" />
+    <End Role="PizzaIngredients" Type="Self.PizzaIngredients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingredients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PizzaIngredients">
+        <PropertyRef Name="IngredientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PizzaIngredients_dbo_Pizzas_PizzaId">
+    <End Role="Pizzas" Type="Self.Pizzas" Multiplicity="1" />
+    <End Role="PizzaIngredients" Type="Self.PizzaIngredients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pizzas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PizzaIngredients">
+        <PropertyRef Name="PizzaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PizzaToOrders_dbo_Orders_OrderId">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+    <End Role="PizzaToOrders" Type="Self.PizzaToOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PizzaToOrders">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PizzaToOrders_dbo_Pizzas_PizzaId">
+    <End Role="Pizzas" Type="Self.Pizzas" Multiplicity="1" />
+    <End Role="PizzaToOrders" Type="Self.PizzaToOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pizzas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PizzaToOrders">
+        <PropertyRef Name="PizzaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_StockIngredients_dbo_Ingredients_IngredientId">
+    <End Role="Ingredients" Type="Self.Ingredients" Multiplicity="1" />
+    <End Role="StockIngredients" Type="Self.StockIngredients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingredients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StockIngredients">
+        <PropertyRef Name="IngredientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_VendorIngredients_dbo_Ingredients_IngredientId">
+    <End Role="Ingredients" Type="Self.Ingredients" Multiplicity="1" />
+    <End Role="VendorIngredients" Type="Self.VendorIngredients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingredients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VendorIngredients">
+        <PropertyRef Name="IngredientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_VendorIngredients_dbo_Vendors_VendorId">
+    <End Role="Vendors" Type="Self.Vendors" Multiplicity="1" />
+    <End Role="VendorIngredients" Type="Self.VendorIngredients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendors">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VendorIngredients">
+        <PropertyRef Name="VendorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_VendorIngredientToOrders_dbo_Ingredients_IngredientId">
+    <End Role="Ingredients" Type="Self.Ingredients" Multiplicity="1" />
+    <End Role="VendorIngredientToOrders" Type="Self.VendorIngredientToOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingredients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VendorIngredientToOrders">
+        <PropertyRef Name="IngredientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_VendorIngredientToOrders_dbo_VendorIngredients_IngredientId_VendorId">
+    <End Role="VendorIngredients" Type="Self.VendorIngredients" Multiplicity="1" />
+    <End Role="VendorIngredientToOrders" Type="Self.VendorIngredientToOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VendorIngredients">
+        <PropertyRef Name="IngredientId" />
+        <PropertyRef Name="VendorId" />
+      </Principal>
+      <Dependent Role="VendorIngredientToOrders">
+        <PropertyRef Name="IngredientId" />
+        <PropertyRef Name="VendorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_VendorIngredientToOrders_dbo_VendorOrders_VendorOrderId">
+    <End Role="VendorOrders" Type="Self.VendorOrders" Multiplicity="1" />
+    <End Role="VendorIngredientToOrders" Type="Self.VendorIngredientToOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VendorOrders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VendorIngredientToOrders">
+        <PropertyRef Name="VendorOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_VendorIngredientToOrders_dbo_Vendors_VendorId">
+    <End Role="Vendors" Type="Self.Vendors" Multiplicity="1" />
+    <End Role="VendorIngredientToOrders" Type="Self.VendorIngredientToOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendors">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VendorIngredientToOrders">
+        <PropertyRef Name="VendorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ingredients" EntityType="Self.Ingredients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderToCooks" EntityType="Self.OrderToCooks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PizzaIngredients" EntityType="Self.PizzaIngredients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pizzas" EntityType="Self.Pizzas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PizzaToOrders" EntityType="Self.PizzaToOrders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceUsers" EntityType="Self.ServiceUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shifts" EntityType="Self.Shifts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StockIngredients" EntityType="Self.StockIngredients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VendorIngredients" EntityType="Self.VendorIngredients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VendorIngredientToOrders" EntityType="Self.VendorIngredientToOrders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VendorOrders" EntityType="Self.VendorOrders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vendors" EntityType="Self.Vendors" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Orders_dbo_ServiceUsers_UserId" Association="Self.FK_dbo_Orders_dbo_ServiceUsers_UserId">
+      <End Role="ServiceUsers" EntitySet="ServiceUsers" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_OrderToCooks_dbo_Orders_OrderId" Association="Self.FK_dbo_OrderToCooks_dbo_Orders_OrderId">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderToCooks" EntitySet="OrderToCooks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_OrderToCooks_dbo_Shifts_ShiftId" Association="Self.FK_dbo_OrderToCooks_dbo_Shifts_ShiftId">
+      <End Role="Shifts" EntitySet="Shifts" />
+      <End Role="OrderToCooks" EntitySet="OrderToCooks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PizzaIngredients_dbo_Ingredients_IngredientId" Association="Self.FK_dbo_PizzaIngredients_dbo_Ingredients_IngredientId">
+      <End Role="Ingredients" EntitySet="Ingredients" />
+      <End Role="PizzaIngredients" EntitySet="PizzaIngredients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PizzaIngredients_dbo_Pizzas_PizzaId" Association="Self.FK_dbo_PizzaIngredients_dbo_Pizzas_PizzaId">
+      <End Role="Pizzas" EntitySet="Pizzas" />
+      <End Role="PizzaIngredients" EntitySet="PizzaIngredients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PizzaToOrders_dbo_Orders_OrderId" Association="Self.FK_dbo_PizzaToOrders_dbo_Orders_OrderId">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="PizzaToOrders" EntitySet="PizzaToOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PizzaToOrders_dbo_Pizzas_PizzaId" Association="Self.FK_dbo_PizzaToOrders_dbo_Pizzas_PizzaId">
+      <End Role="Pizzas" EntitySet="Pizzas" />
+      <End Role="PizzaToOrders" EntitySet="PizzaToOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_StockIngredients_dbo_Ingredients_IngredientId" Association="Self.FK_dbo_StockIngredients_dbo_Ingredients_IngredientId">
+      <End Role="Ingredients" EntitySet="Ingredients" />
+      <End Role="StockIngredients" EntitySet="StockIngredients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_VendorIngredients_dbo_Ingredients_IngredientId" Association="Self.FK_dbo_VendorIngredients_dbo_Ingredients_IngredientId">
+      <End Role="Ingredients" EntitySet="Ingredients" />
+      <End Role="VendorIngredients" EntitySet="VendorIngredients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_VendorIngredients_dbo_Vendors_VendorId" Association="Self.FK_dbo_VendorIngredients_dbo_Vendors_VendorId">
+      <End Role="Vendors" EntitySet="Vendors" />
+      <End Role="VendorIngredients" EntitySet="VendorIngredients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_VendorIngredientToOrders_dbo_Ingredients_IngredientId" Association="Self.FK_dbo_VendorIngredientToOrders_dbo_Ingredients_IngredientId">
+      <End Role="Ingredients" EntitySet="Ingredients" />
+      <End Role="VendorIngredientToOrders" EntitySet="VendorIngredientToOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_VendorIngredientToOrders_dbo_VendorIngredients_IngredientId_VendorId" Association="Self.FK_dbo_VendorIngredientToOrders_dbo_VendorIngredients_IngredientId_VendorId">
+      <End Role="VendorIngredients" EntitySet="VendorIngredients" />
+      <End Role="VendorIngredientToOrders" EntitySet="VendorIngredientToOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_VendorIngredientToOrders_dbo_VendorOrders_VendorOrderId" Association="Self.FK_dbo_VendorIngredientToOrders_dbo_VendorOrders_VendorOrderId">
+      <End Role="VendorOrders" EntitySet="VendorOrders" />
+      <End Role="VendorIngredientToOrders" EntitySet="VendorIngredientToOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_VendorIngredientToOrders_dbo_Vendors_VendorId" Association="Self.FK_dbo_VendorIngredientToOrders_dbo_Vendors_VendorId">
+      <End Role="Vendors" EntitySet="Vendors" />
+      <End Role="VendorIngredientToOrders" EntitySet="VendorIngredientToOrders" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

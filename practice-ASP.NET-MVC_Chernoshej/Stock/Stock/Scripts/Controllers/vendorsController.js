@@ -3,6 +3,12 @@
 
     function VendorsController($scope, vendorsService) {
 
+        var refreshVendors = function () {
+            vendorsService.getVendors().then(function (response) {
+                $scope.vendors = response;
+            });
+        }
+
         var reset = function () {
             $scope.newVendorName = null;
             $scope.newVendorQuickness = null;
@@ -10,17 +16,19 @@
             $scope.newVendorProductPrice = null;
         }
 
-        vendorsService.getVendors().then(function (response) {
-            $scope.vendors = response;
-        });        
+        refreshVendors();
 
         $scope.removeVendor = function (id) {
-            vendorsService.removeVendor(id);
+            vendorsService.removeVendor(id).then(function (response) {
+                refreshVendors();
+            });
         }
 
         $scope.addVendor = function () {
             vendorsService.addVendor($scope.newVendorName, $scope.newVendorProduct,
-				$scope.newVendorQuickness, $scope.newVendorProductPrice);
+            	$scope.newVendorQuickness, $scope.newVendorProductPrice).then(function (response) {
+            	    refreshVendors();
+            	});
             reset();
         }
     };

@@ -12,8 +12,7 @@ namespace Stock.DAL
         }
 
         public DbSet<Vendor> Vendors { get; set; }
-        public DbSet<Ingredient> Ingredients { get; set; }
-        public DbSet<VendorIngredient> VendorIngredients { get; set; }
+        //public DbSet<Ingredient> Ingredients { get; set; }        
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
