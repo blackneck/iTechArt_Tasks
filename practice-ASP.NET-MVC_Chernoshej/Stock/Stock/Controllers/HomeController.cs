@@ -10,8 +10,8 @@ namespace Stock.Controllers
 {
     public class HomeController : Controller
     {
-        //private StockContext db = new StockContext();
-        private PizzaServiceContext db = new PizzaServiceContext();
+        private StockContext db = new StockContext();
+        //private PizzaServiceContext db = new PizzaServiceContext();
 
         // GET: Home/GetVendors
         public ActionResult GetVendors()
