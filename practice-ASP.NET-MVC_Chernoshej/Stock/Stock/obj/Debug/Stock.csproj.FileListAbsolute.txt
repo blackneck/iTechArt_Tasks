@@ -68,3 +68,5 @@ D:\workspace\projects\Tasks\practice-ASP.NET-MVC_Chernoshej\Stock\Stock\obj\Debu
 D:\workspace\projects\Tasks\practice-ASP.NET-MVC_Chernoshej\Stock\Stock\obj\Debug\Stock.pdb
 D:\workspace\projects\Tasks\practice-ASP.NET-MVC_Chernoshej\Stock\Stock\bin\Scripts\Services\vendorsService.js
 D:\workspace\projects\Tasks\practice-ASP.NET-MVC_Chernoshej\Stock\Stock\obj\Debug\Stock.csprojResolveAssemblyReference.cache
+D:\workspace\projects\Tasks\practice-ASP.NET-MVC_Chernoshej\Stock\Stock\obj\Debug\Stock.Migrations.addIngredient.resources
+D:\workspace\projects\Tasks\practice-ASP.NET-MVC_Chernoshej\Stock\Stock\obj\Debug\Stock.csproj.GenerateResource.Cache

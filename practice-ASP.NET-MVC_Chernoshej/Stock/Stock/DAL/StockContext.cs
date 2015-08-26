@@ -12,11 +12,21 @@ namespace Stock.DAL
         }
 
         public DbSet<Vendor> Vendors { get; set; }
-        //public DbSet<Ingredient> Ingredients { get; set; }        
+        public DbSet<Ingredient> Ingredients { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            //modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+            modelBuilder.Entity<Vendor>()
+                .HasMany(p => p.Ingredients)
+                .WithMany(t => t.Vendors)
+                .Map(mc =>
+                {
+                    mc.ToTable("VendorIngredient");
+                    mc.MapLeftKey("VendorId");
+                    mc.MapRightKey("IngredientId");
+                });
         }
     }
 }

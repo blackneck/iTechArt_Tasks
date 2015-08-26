@@ -3,25 +3,25 @@ namespace Stock.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class adIngredient : DbMigration
+    public partial class addIngredient : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.Ingredient",
+                "dbo.Ingredients",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        ID = c.Int(nullable: false, identity: true),
                         Price = c.Int(nullable: false),
                         Name = c.String(),
                         Weight = c.Int(nullable: false),
                         Photo = c.String(),
                         Family = c.String(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.ID);
             
             CreateTable(
-                "dbo.Vendor",
+                "dbo.Vendors",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
@@ -34,26 +34,26 @@ namespace Stock.Migrations
                 "dbo.VendorIngredient",
                 c => new
                     {
-                        VendorID = c.Int(nullable: false),
-                        IngredientID = c.Int(nullable: false),
+                        VendorId = c.Int(nullable: false),
+                        IngredientId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => new { t.VendorID, t.IngredientID })
-                .ForeignKey("dbo.Vendor", t => t.VendorID, cascadeDelete: true)
-                .ForeignKey("dbo.Ingredient", t => t.IngredientID, cascadeDelete: true)
-                .Index(t => t.VendorID)
-                .Index(t => t.IngredientID);
+                .PrimaryKey(t => new { t.VendorId, t.IngredientId })
+                .ForeignKey("dbo.Vendors", t => t.VendorId, cascadeDelete: true)
+                .ForeignKey("dbo.Ingredients", t => t.IngredientId, cascadeDelete: true)
+                .Index(t => t.VendorId)
+                .Index(t => t.IngredientId);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.VendorIngredient", "IngredientID", "dbo.Ingredient");
-            DropForeignKey("dbo.VendorIngredient", "VendorID", "dbo.Vendor");
-            DropIndex("dbo.VendorIngredient", new[] { "IngredientID" });
-            DropIndex("dbo.VendorIngredient", new[] { "VendorID" });
+            DropForeignKey("dbo.VendorIngredient", "IngredientId", "dbo.Ingredients");
+            DropForeignKey("dbo.VendorIngredient", "VendorId", "dbo.Vendors");
+            DropIndex("dbo.VendorIngredient", new[] { "IngredientId" });
+            DropIndex("dbo.VendorIngredient", new[] { "VendorId" });
             DropTable("dbo.VendorIngredient");
-            DropTable("dbo.Vendor");
-            DropTable("dbo.Ingredient");
+            DropTable("dbo.Vendors");
+            DropTable("dbo.Ingredients");
         }
     }
 }
